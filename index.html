@@ -1,0 +1,209 @@
+<!-- 14 APRIL 2025 -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Personal Portfolio Website </title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/01c6fe5725.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <canvas id="canvas"></canvas>
+
+<!-- ----------------------------- 1 screen --------------------------------------------------- -->
+<!-- ------------------------------Header Bar ------------------------------------------------- -->
+<div id="header">
+    <!-------------------------------3-D model viewer -------------------------------------------------->
+   
+    <div class="container">
+        <nav>
+    <model-viewer
+    src="images/3D_logo_of_V.glb"
+    alt="Gesture Emoji"
+    auto-rotate
+    camera-controls
+    ar
+    style=" background: transparent;" 
+    interaction-prompt="none"
+    interaction-prompt-threshold="0">
+  </model-viewer>
+<!-- -------------------------------------------------------------------------------------------------- -->
+            
+            <img src="images/logo.png" alt="Dev's logo" class="logo">
+            <ul id="sidemenu"> 
+               <li><a href="#">Home</a></li>
+               <li><a href="#">About</a></li>
+               <li><a href="#">Services</a></li>
+               <li><a href="#">Portfolio</a></li>
+               <li><a href="#">Contact</a></li>
+               <i class="fa-solid fa-square-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="hero">
+        <div class="header-text">
+          <p>Cyber security Expert</p>
+          <h1>Hi, I'm <span>Dev Gupta</span><br>from Bhopal</h1>
+        </div>
+
+        <div class="hero-image" >
+        <img src="images/dev01.png" alt="Dev's Picture" class="floating-img">
+        </div>
+        </div>
+    </div>
+</div>
+<!-- ----------------------------------------------------- Screen 2 ------------------------------------------------------ -->
+<!-- ------------------------------------------------------About Me Section -------------------------------------------- -->
+ <!-- 24 April 2025 (wednesday) -->
+ <section id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1 about-image">
+                <img src="images/dev02.jpg" class="userpic">
+            </div>
+                <div class="row-column-2 about-text">
+                    <h1 class="sub-title-about"> About Me</h1>
+                    <p>Hi, I'm <b>Dev Gupta</b>, a passionate Cybersecurity enthusiast and Computer Science student based in Bhopal, India. With a deep interest in ethical hacking, secure networks, and web penetration testing, I thrive on solving real-world tech challenges. Whether it's writing code, analyzing threats, or building interactive websites, I’m always exploring new ways to blend creativity with technology. I'm on a mission to make the digital world safer—<i> "one line of code at a time"</i>.</p>
+                    <div class="tab-title">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('Experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('Education')">Education</p>
+                    </div>
+                    <div>
+                        <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                                <li><span>Cybersecurity basics</span><br>Vulnerability identification, ethical hacking practices, basic penetration testing... </li>
+                                <li><span>Web development</span><br> Web app development</li>
+                                <li><span>Content creation</span><br> YouTube videos, blogging</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="Experience">
+                            <ul>
+                                <li><span>Academic Projects</span><br>Built a Basic Calculator, Scientific Calculator, and Tic-Tac-Toe Game using C++</li>
+                                <li><span>Workshops & Learning</span><br>Practicing networking and cybersecurity challenges on platforms like Hack The Box and TryHackMe.</li>
+                                <li><span>Content Creation</span><br>Created educational YouTube videos and blogs about cybersecurity, math, and physics.</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="Education">
+                            <ul>
+                                <li><span>2023 – Present</span><br>Bachelor of Technology (B.Tech) — Computer Science</li>
+                                <li><span>2022</span><br>Higher Secondary (12th Grade)</li>
+                                <li><span>2020</span><br>Secondary (10th Grade)                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+ </section>
+<!-- ---------------------------------------------------------SERVICES -------------------------------------------------------------------------------- -->
+<section id="services">
+    <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Web Development</h2>
+                <p>I offer web development services where I build basic and responsive websites using HTML, CSS, and JavaScript. I specialize in creating modern designs that are simple yet effective.</p>
+                <a href="https://devkantgupta01.github.io/Coming-Soon/" target="_blank" rel="noopener noreferrer"> learn more </a>
+            </div>
+            <div>
+                <i class="fa-solid fa-terminal"></i>
+                <h2>Cybersecurity & Python Scripting</h2>
+                <p>In cybersecurity and Python scripting, I offer services like vulnerability scanning, ethical hacking, and writing Python scripts for port scanning and basic payloads. I create beginner-friendly tools to simplify real-world concepts.</p>
+                <a href="https://devkantgupta01.github.io/Coming-Soon/" target="_blank" rel="noopener noreferrer"> learn more </a>
+            </div>
+            <div>
+                <i class="fa-solid fa-book"></i>
+                <h2>Programming & Problem Solving</h2>
+                <p>Additionally, I provide programming services with a strong foundation in C++ and Data Structures & Algorithms (DSA). I enjoy solving coding challenges and helping others strengthen their programming skills.</p>
+                <a href="https://devkantgupta01.github.io/Coming-Soon/" target="_blank" rel="noopener noreferrer"> learn more </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ----------------------------------------------------------------------  WORK ----------------------------------------------------------------------------- -->
+<section id="portfolio">
+    <div class="container">
+       <h1 class="sub-title">My Work</h1>
+       <div class="work-list">
+        <div class="work">
+            <img src="images/python_backdoor.jpg">
+            <div class="layer">
+                <h3>Python backdoor</h3>
+                <p>I developed a basic Python backdoor that allows remote access to a target machine. It supports simple commands like file access and system control over a network</p>
+                <a href="https://example.com/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+        </div>
+        <div class="work">
+            <img src="images/tic-tac-tao_game.jpg">
+            <div class="layer">
+                <h3>Tic-Tac-Toe Game</h3>
+                <p>Tic-Tac-Toe game using HTML, CSS, and JavaScript where two players compete on a 3x3 grid. It handles turns, checks winners, and shows the result dynamically.</p>
+                <a href="https://github.com/devkantgupta01/game" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+        </div>
+        <div class="work">
+            <img src="images/scientific_calculator.jpg">
+            <div class="layer">
+                <h3>Basic Scientific Calculator in C++</h3>
+                <p>I built a basic scientific calculator in C++ for simple and scientific calculations.</p>
+                <a href="https://github.com/devkantgupta01/2nd-year-projects/blob/main/Project_Calculator.cpp" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+        </div>
+       </div> 
+       <a href="https://devkantgupta01.github.io/Coming-Soon/" target="_blank" rel="noopener noreferrer" class="btn btn2">See More</a>
+    </div>
+</section>
+<!-- -----------------------------------------------------------------------------------------------    contact ------------------------------------------------------------------------------------------------- -->
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-envelope"></i>devkantgupta@gmail.com</p>
+                <p><i class="fa-solid fa-phone-volume"></i>6200XXXX08</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/devkantgupta01?igsh=MTE3emptb2JtanVpZg==" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://youtube.com/@devkantgupta01?si=-M-WMk88xRYnv6NQ" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.linkedin.com/in/devkant-gupta-58754a297?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://example.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-square-facebook"></i></a>
+                </div>
+                <a href="/images/DEV'S Resume.pdf" download class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form>
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            <p> © 2025 Dev Gupta — Designed & Developed with 🩵 by Dev Gupta. All rights reserved.</p>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+        function openmenu(){
+            sidemenu.style.right = "0";
+        }
+        function closemenu(){
+            sidemenu.style.right = "-200px";
+        }
+    </script>
+
+</body>
+</html>
