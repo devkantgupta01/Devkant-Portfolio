@@ -10,16 +10,14 @@
         <script src="https://kit.fontawesome.com/01c6fe5725.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <canvas id="canvas"></canvas>
+<canvas id="canvas"></canvas>
 
 <!-- ----------------------------- 1 screen --------------------------------------------------- -->
 <!-- ------------------------------Header Bar ------------------------------------------------- -->
 <div id="header">
-    <!-------------------------------3-D model viewer -------------------------------------------------->
-   
     <div class="container">
-        <nav>
-    <model-viewer
+    <nav>
+<model-viewer
     src="images/3D_logo_of_V.glb"
     alt="Gesture Emoji"
     auto-rotate
@@ -28,20 +26,25 @@
     style=" background: transparent;" 
     interaction-prompt="none"
     interaction-prompt-threshold="0">
-  </model-viewer>
-<!-- -------------------------------------------------------------------------------------------------- -->
-            
-            <img src="images/logo.png" alt="Dev's logo" class="logo">
+</model-viewer>
+<img src="images/logo_preview_rev_1.png" alt="Dev's logo" class="logo"> 
+
             <ul id="sidemenu"> 
-               <li><a href="#">Home</a></li>
-               <li><a href="#">About</a></li>
-               <li><a href="#">Services</a></li>
-               <li><a href="#">Portfolio</a></li>
-               <li><a href="#">Contact</a></li>
+               <li><a href="#header">Home</a></li>
+               <li><a href="#about">About</a></li>
+               <li><a href="#services">Services</a></li>
+               <li><a href="#portfolio">Portfolio</a></li>
+               <li><a href="#contact">Contact</a></li>
                <i class="fa-solid fa-square-xmark" onclick="closemenu()"></i>
             </ul>
             <i class="fa-solid fa-bars" onclick="openmenu()"></i>
-        </nav>
+    </nav>
+    </div> 
+ </div> 
+
+<!-- ---------------------------------------------------------Screen 1 ( Introduction section ) ------------------------------------------------>
+<section id="Introduction">  
+    <div class="container">
         <div class="hero">
         <div class="header-text">
           <p>Cyber security Expert</p>
@@ -49,22 +52,24 @@
         </div>
 
         <div class="hero-image" >
-        <img src="images/dev01.png" alt="Dev's Picture" class="floating-img">
+         <img src="images/dev_main_image.jpg" alt="Dev's Picture" class="floating-img">
+        <!-- <img src="images/dev01.png" alt="Dev's Picture" class="floating-img"> -->
         </div>
         </div>
     </div>
-</div>
+</section>
 <!-- ----------------------------------------------------- Screen 2 ------------------------------------------------------ -->
 <!-- ------------------------------------------------------About Me Section -------------------------------------------- -->
  <!-- 24 April 2025 (wednesday) -->
- <section id="about">
+  <main id="main">
+   <section id="about" data-bg="#d5d9e5">
     <div class="container">
+    <h1 class="About_me"> About Me</h1>
         <div class="row">
             <div class="about-col-1 about-image">
                 <img src="images/dev02.jpg" class="userpic">
             </div>
                 <div class="row-column-2 about-text">
-                    <h1 class="sub-title-about"> About Me</h1>
                     <p>Hi, I'm <b>Dev Gupta</b>, a passionate Cybersecurity enthusiast and Computer Science student based in Bhopal, India. With a deep interest in ethical hacking, secure networks, and web penetration testing, I thrive on solving real-world tech challenges. Whether it's writing code, analyzing threats, or building interactive websites, I’m always exploring new ways to blend creativity with technology. I'm on a mission to make the digital world safer—<i> "one line of code at a time"</i>.</p>
                     <div class="tab-title">
                         <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
@@ -95,11 +100,11 @@
                         </div>
                     </div>
                 </div>
+            </div>
         </div>
-    </div>
  </section>
 <!-- ---------------------------------------------------------SERVICES -------------------------------------------------------------------------------- -->
-<section id="services">
+<section id="services" data-bg="#002a5c">
     <div class="container">
         <h1 class="sub-title">My Services</h1>
         <div class="services-list">
@@ -125,7 +130,7 @@
     </div>
 </section>
 <!-- ----------------------------------------------------------------------  WORK ----------------------------------------------------------------------------- -->
-<section id="portfolio">
+<section id="portfolio" data-bg="#084c61 ">   
     <div class="container">
        <h1 class="sub-title">My Work</h1>
        <div class="work-list">
@@ -157,8 +162,8 @@
        <a href="https://devkantgupta01.github.io/Coming-Soon/" target="_blank" rel="noopener noreferrer" class="btn btn2">See More</a>
     </div>
 </section>
-<!-- -----------------------------------------------------------------------------------------------    contact ------------------------------------------------------------------------------------------------- -->
-<section id="contact">
+<!-- ----------------------------------------------------------------------------------------    contact ------------------------------------------------------------------------------------------------- -->
+<section id="contact" data-bg="#000000">
     <div class="container">
         <div class="row">
             <div class="contact-left">
@@ -166,20 +171,21 @@
                 <p><i class="fa-solid fa-envelope"></i>devkantgupta@gmail.com</p>
                 <p><i class="fa-solid fa-phone-volume"></i>6200XXXX08</p>
                 <div class="social-icons">
-                    <a href="https://www.instagram.com/devkantgupta01?igsh=MTE3emptb2JtanVpZg==" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://youtube.com/@devkantgupta01?si=-M-WMk88xRYnv6NQ" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>
-                    <a href="https://www.linkedin.com/in/devkant-gupta-58754a297?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://example.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-square-facebook"></i></a>
+                    <a href="https://www.instagram.com/devkantgupta01?igsh=MTE3emptb2JtanVpZg==" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram instagram-icon"></i></a>
+                    <a href="https://youtube.com/@devkantgupta01?si=-M-WMk88xRYnv6NQ" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube youtube-icon"></i></a>
+                    <a href="https://www.linkedin.com/in/devkant-gupta-58754a297?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin linkedin-icon"></i></a>
+                    <a href="https://example.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-square-facebook facebook-icon"></i></a>
                 </div>
                 <a href="/images/DEV'S Resume.pdf" download class="btn btn2">Download CV</a>
             </div>
             <div class="contact-right">
-                <form>
+                <form name="submit-to-google-sheet">
                     <input type="text" name="Name" placeholder="Your Name" required>
                     <input type="email" name="email" placeholder="Your Email" required>
                     <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
                     <button type="submit" class="btn btn2">Submit</button>
                 </form>
+                <span id="msg"></span>
             </div>
         </div>
         <div class="copyright">
@@ -187,7 +193,7 @@
         </div>
     </div>
 </section>
-
+</main>
 
 
 
@@ -195,7 +201,7 @@
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <script src="script.js"></script>
 
-    <script>
+     <script>
         var sidemenu = document.getElementById("sidemenu");
         function openmenu(){
             sidemenu.style.right = "0";
@@ -204,6 +210,31 @@
             sidemenu.style.right = "-200px";
         }
     </script>
+
+
+         <!-- JS for smooth background transitions -->
+  <script>
+    const main = document.getElementById('main');
+    const sections = document.querySelectorAll('section');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const bgColor = entry.target.getAttribute('data-bg');
+            main.style.backgroundColor = bgColor;
+          }
+        });
+      },
+      {
+        threshold: 0.5,
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+  </script>
+
+
 
 </body>
 </html>
