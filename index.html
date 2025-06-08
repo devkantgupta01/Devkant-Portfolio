@@ -1,200 +1,605 @@
 <!-- 14 APRIL 2025 -->
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Personal Portfolio Website </title>
-        <link rel="stylesheet" href="style.css">
-        <script src="https://kit.fontawesome.com/01c6fe5725.js" crossorigin="anonymous"></script>
-    </head>
-    <body>
-<canvas id="canvas"></canvas>
 
-<!-- ----------------------------- 1 screen --------------------------------------------------- -->
-<!-- ------------------------------Header Bar ------------------------------------------------- -->
-<div id="header">
-    <div class="container">
-    <nav>
-<model-viewer
-    src="images/3D_logo_of_V.glb"
-    alt="Gesture Emoji"
-    auto-rotate
-    camera-controls
-    ar
-    style=" background: transparent;" 
-    interaction-prompt="none"
-    interaction-prompt-style="none"
-    interaction-prompt-threshold="0">
-</model-viewer>
-<img src="images/logo_preview_rev_1.png" alt="Dev's logo" class="logo"> 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="friends.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto+Slab:wght@300;400;500&family=Source+Code+Pro:wght@300;400;500&family=Playfair+Display:wght@400;500;600&display=swap"
+        rel="stylesheet">
 
-            <ul id="sidemenu"> 
-               <li><a href="#header">Home</a></li>
-               <li><a href="#about">About</a></li>
-               <li><a href="#services">Services</a></li>
-               <li><a href="#portfolio">Portfolio</a></li>
-               <li><a href="#contact">Contact</a></li>
-               <i class="fa-solid fa-square-xmark" onclick="closemenu()"></i>
-            </ul>
-            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
-    </nav>
-    </div> 
- </div> 
+    <!-- <link rel="stylesheet" href="friends.css"> -->
+    <script src="https://kit.fontawesome.com/01c6fe5725.js" crossorigin="anonymous"></script>
+</head>
 
-<!-- ---------------------------------------------------------Screen 1 ( Introduction section ) ------------------------------------------------>
-<section id="Introduction">  
-    <div class="container">
-        <div class="hero">
-        <div class="header-text">
-          <p>Cyber security Expert</p>
-          <h1>Hi, I'm <span>Dev Gupta</span><br>from Bhopal</h1>
-        </div>
+<body>
+    <canvas id="canvas"></canvas>
 
-        <div class="hero-image" >
-         <img src="images/dev_main_image.jpg" alt="Dev's Picture" class="floating-img">
-        <!-- <img src="images/dev01.png" alt="Dev's Picture" class="floating-img"> -->
-        </div>
+    <!-- ----------------------------- 1 screen --------------------------------------------------- -->
+    <!-- ------------------------------Header Bar ------------------------------------------------- -->
+    <div id="header">
+        <div class="container">
+            <nav>
+                <model-viewer src="images/3D_logo_of_V.glb" alt="Gesture Emoji" auto-rotate camera-controls ar
+                    style=" background: transparent;" interaction-prompt="none" interaction-prompt-style="none"
+                    interaction-prompt-threshold="0">
+                </model-viewer>
+                <img src="images/logo_preview_rev_1.png" alt="Dev's logo" class="logo">
+
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-square-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
         </div>
     </div>
-</section>
-<!-- ----------------------------------------------------- Screen 2 ------------------------------------------------------ -->
-<!-- ------------------------------------------------------About Me Section -------------------------------------------- -->
- <!-- 24 April 2025 (wednesday) -->
-  <main id="main">
-   <section id="about" data-bg="#d5d9e5">
-    <div class="container">
-    <h1 class="About_me"> About Me</h1>
-        <div class="row">
-            <div class="about-col-1 about-image">
-                <img src="images/dev02.jpg" class="userpic">
+
+    <!-- ---------------------------------------------------------Screen 1 ( Introduction section ) ------------------------------------------------>
+    <section id="Introduction">
+        <div class="container">
+            <div class="hero">
+                <div class="header-text">
+                    <p>Cyber security Expert</p>
+                    <h1>Hi, I'm <span>Dev Gupta</span><br>from Bhopal</h1>
+                </div>
+
+                <div class="hero-image">
+                    <img src="images/dev_main_image.jpg" alt="Dev's Picture" class="floating-img">
+                    <!-- <img src="images/dev01.png" alt="Dev's Picture" class="floating-img"> -->
+                </div>
             </div>
-                <div class="row-column-2 about-text">
-                    <p>Hi, I'm <b>Dev Gupta</b>, a passionate Cybersecurity enthusiast and Computer Science student based in Bhopal, India. With a deep interest in ethical hacking, secure networks, and web penetration testing, I thrive on solving real-world tech challenges. Whether it's writing code, analyzing threats, or building interactive websites, I’m always exploring new ways to blend creativity with technology. I'm on a mission to make the digital world safer—<i> "one line of code at a time"</i>.</p>
-                    <div class="tab-title">
-                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                        <p class="tab-links" onclick="opentab('Experience')">Experience</p>
-                        <p class="tab-links" onclick="opentab('Education')">Education</p>
+        </div>
+    </section>
+    <!-- ----------------------------------------------------- Screen 2 ------------------------------------------------------ -->
+    <!-- ------------------------------------------------------About Me Section -------------------------------------------- -->
+    <!-- 24 April 2025 (wednesday) -->
+    <main id="main">
+        <section id="about" data-bg="#d5d9e5">
+            <div class="container">
+                <h1 class="About_me"> About Me</h1>
+                <div class="row">
+                    <div class="about-col-1 about-image">
+                        <img src="images/dev02.jpg" class="userpic">
+                    </div>
+                    <div class="row-column-2 about-text">
+                        <p>Hi, I'm <b>Dev Gupta</b>, a passionate Cybersecurity enthusiast and Computer Science student
+                            based in Bhopal, India. With a deep interest in ethical hacking, secure networks, and web
+                            penetration testing, I thrive on solving real-world tech challenges. Whether it's writing
+                            code, analyzing threats, or building interactive websites, I’m always exploring new ways to
+                            blend creativity with technology. I'm on a mission to make the digital world safer—<i> "one
+                                line of code at a time"</i>.</p>
+                        <div class="tab-title">
+                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links" onclick="opentab('Experience')">Experience</p>
+                            <p class="tab-links" onclick="opentab('Education')">Education</p>
+                        </div>
+                        <div>
+                            <div class="tab-contents active-tab" id="skills">
+                                <ul>
+                                    <li><span>Cybersecurity basics</span><br>Vulnerability identification, ethical
+                                        hacking practices, basic penetration testing... </li>
+                                    <li><span>Web development</span><br> Web app development</li>
+                                    <li><span>Content creation</span><br> YouTube videos, blogging</li>
+                                </ul>
+                            </div>
+                            <div class="tab-contents" id="Experience">
+                                <ul>
+                                    <li><span>Academic Projects</span><br>Built a Basic Calculator, Scientific
+                                        Calculator, and Tic-Tac-Toe Game using C++</li>
+                                    <li><span>Workshops & Learning</span><br>Practicing networking and cybersecurity
+                                        challenges on platforms like Hack The Box and TryHackMe.</li>
+                                    <li><span>Content Creation</span><br>Created educational YouTube videos and blogs
+                                        about cybersecurity, math, and physics.</li>
+                                </ul>
+                            </div>
+                            <div class="tab-contents" id="Education">
+                                <ul>
+                                    <li><span>2023 – Present</span><br>Bachelor of Technology (B.Tech) — Computer
+                                        Science</li>
+                                    <li><span>2022</span><br>Higher Secondary (12th Grade)</li>
+                                    <li><span>2020</span><br>Secondary (10th Grade) </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ---------------------------------------------------------SERVICES -------------------------------------------------------------------------------- -->
+        <section id="services" data-bg="#002a5c">
+            <div class="container">
+                <h1 class="sub-title">My Services</h1>
+                <div class="services-list">
+                    <div>
+                        <i class="fa-solid fa-code"></i>
+                        <h2>Web Development</h2>
+                        <p>I offer web development services where I build basic and responsive websites using HTML, CSS,
+                            and JavaScript. I specialize in creating modern designs that are simple yet effective.</p>
+                        <a href="https://devkantgupta01.github.io/Coming-Soon/" target="_blank"
+                            rel="noopener noreferrer"> learn more </a>
                     </div>
                     <div>
-                        <div class="tab-contents active-tab" id="skills">
-                            <ul>
-                                <li><span>Cybersecurity basics</span><br>Vulnerability identification, ethical hacking practices, basic penetration testing... </li>
-                                <li><span>Web development</span><br> Web app development</li>
-                                <li><span>Content creation</span><br> YouTube videos, blogging</li>
-                            </ul>
-                        </div>
-                        <div class="tab-contents" id="Experience">
-                            <ul>
-                                <li><span>Academic Projects</span><br>Built a Basic Calculator, Scientific Calculator, and Tic-Tac-Toe Game using C++</li>
-                                <li><span>Workshops & Learning</span><br>Practicing networking and cybersecurity challenges on platforms like Hack The Box and TryHackMe.</li>
-                                <li><span>Content Creation</span><br>Created educational YouTube videos and blogs about cybersecurity, math, and physics.</li>
-                            </ul>
-                        </div>
-                        <div class="tab-contents" id="Education">
-                            <ul>
-                                <li><span>2023 – Present</span><br>Bachelor of Technology (B.Tech) — Computer Science</li>
-                                <li><span>2022</span><br>Higher Secondary (12th Grade)</li>
-                                <li><span>2020</span><br>Secondary (10th Grade)                                </li>
-                            </ul>
-                        </div>
+                        <i class="fa-solid fa-terminal"></i>
+                        <h2>Cybersecurity & Python Scripting</h2>
+                        <p>In cybersecurity and Python scripting, I offer services like vulnerability scanning, ethical
+                            hacking, and writing Python scripts for port scanning and basic payloads. I create
+                            beginner-friendly tools to simplify real-world concepts.</p>
+                        <a href="https://devkantgupta01.github.io/Coming-Soon/" target="_blank"
+                            rel="noopener noreferrer"> learn more </a>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-book"></i>
+                        <h2>Programming & Problem Solving</h2>
+                        <p>Additionally, I provide programming services with a strong foundation in C++ and Data
+                            Structures & Algorithms (DSA). I enjoy solving coding challenges and helping others
+                            strengthen their programming skills.</p>
+                        <a href="https://devkantgupta01.github.io/Coming-Soon/" target="_blank"
+                            rel="noopener noreferrer"> learn more </a>
                     </div>
                 </div>
             </div>
-        </div>
- </section>
-<!-- ---------------------------------------------------------SERVICES -------------------------------------------------------------------------------- -->
-<section id="services" data-bg="#002a5c">
-    <div class="container">
-        <h1 class="sub-title">My Services</h1>
-        <div class="services-list">
-            <div>
-                <i class="fa-solid fa-code"></i>
-                <h2>Web Development</h2>
-                <p>I offer web development services where I build basic and responsive websites using HTML, CSS, and JavaScript. I specialize in creating modern designs that are simple yet effective.</p>
-                <a href="https://devkantgupta01.github.io/Coming-Soon/" target="_blank" rel="noopener noreferrer"> learn more </a>
-            </div>
-            <div>
-                <i class="fa-solid fa-terminal"></i>
-                <h2>Cybersecurity & Python Scripting</h2>
-                <p>In cybersecurity and Python scripting, I offer services like vulnerability scanning, ethical hacking, and writing Python scripts for port scanning and basic payloads. I create beginner-friendly tools to simplify real-world concepts.</p>
-                <a href="https://devkantgupta01.github.io/Coming-Soon/" target="_blank" rel="noopener noreferrer"> learn more </a>
-            </div>
-            <div>
-                <i class="fa-solid fa-book"></i>
-                <h2>Programming & Problem Solving</h2>
-                <p>Additionally, I provide programming services with a strong foundation in C++ and Data Structures & Algorithms (DSA). I enjoy solving coding challenges and helping others strengthen their programming skills.</p>
-                <a href="https://devkantgupta01.github.io/Coming-Soon/" target="_blank" rel="noopener noreferrer"> learn more </a>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- ----------------------------------------------------------------------  WORK ----------------------------------------------------------------------------- -->
-<section id="portfolio" data-bg="#084c61 ">   
-    <div class="container">
-       <h1 class="sub-title">My Work</h1>
-       <div class="work-list">
-        <div class="work">
-            <img src="images/python_backdoor.jpg">
-            <div class="layer">
-                <h3>Python backdoor</h3>
-                <p>I developed a basic Python backdoor that allows remote access to a target machine. It supports simple commands like file access and system control over a network</p>
-                <a href="https://example.com/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-            </div>
-        </div>
-        <div class="work">
-            <img src="images/tic-tac-tao_game.jpg">
-            <div class="layer">
-                <h3>Tic-Tac-Toe Game</h3>
-                <p>Tic-Tac-Toe game using HTML, CSS, and JavaScript where two players compete on a 3x3 grid. It handles turns, checks winners, and shows the result dynamically.</p>
-                <a href="https://github.com/devkantgupta01/game" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-            </div>
-        </div>
-        <div class="work">
-            <img src="images/scientific_calculator.jpg">
-            <div class="layer">
-                <h3>Basic Scientific Calculator in C++</h3>
-                <p>I built a basic scientific calculator in C++ for simple and scientific calculations.</p>
-                <a href="https://github.com/devkantgupta01/2nd-year-projects/blob/main/Project_Calculator.cpp" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-            </div>
-        </div>
-       </div> 
-       <a href="https://devkantgupta01.github.io/Coming-Soon/" target="_blank" rel="noopener noreferrer" class="btn btn2">See More</a>
-    </div>
-</section>
-<!-- ----------------------------------------------------------------------------------------    contact ------------------------------------------------------------------------------------------------- -->
-<section id="contact" data-bg="#000000">
-    <div class="container">
-        <div class="row">
-            <div class="contact-left">
-                <h1 class="sub-title">Contact Me</h1>
-                <p><i class="fa-solid fa-envelope"></i>devkantgupta@gmail.com</p>
-                <p><i class="fa-solid fa-phone-volume"></i>6200XXXX08</p>
-                <div class="social-icons">
-                    <a href="https://www.instagram.com/devkantgupta01?igsh=MTE3emptb2JtanVpZg==" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram instagram-icon"></i></a>
-                    <a href="https://youtube.com/@devkantgupta01?si=-M-WMk88xRYnv6NQ" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube youtube-icon"></i></a>
-                    <a href="https://www.linkedin.com/in/devkant-gupta-58754a297?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin linkedin-icon"></i></a>
-                    <a href="https://example.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-square-facebook facebook-icon"></i></a>
+        </section>
+        <!-- ----------------------------------------------------------------------  WORK ----------------------------------------------------------------------------- -->
+        <section id="portfolio" data-bg="#084c61 ">
+            <div class="container">
+                <h1 class="sub-title">My Work</h1>
+                <div class="work-list">
+                    <div class="work">
+                        <img src="images/python_backdoor.jpg">
+                        <div class="layer">
+                            <h3>Python backdoor</h3>
+                            <p>I developed a basic Python backdoor that allows remote access to a target machine. It
+                                supports simple commands like file access and system control over a network</p>
+                            <a href="https://example.com/" target="_blank" rel="noopener noreferrer"><i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                    <div class="work">
+                        <img src="images/tic-tac-tao_game.jpg">
+                        <div class="layer">
+                            <h3>Tic-Tac-Toe Game</h3>
+                            <p>Tic-Tac-Toe game using HTML, CSS, and JavaScript where two players compete on a 3x3 grid.
+                                It handles turns, checks winners, and shows the result dynamically.</p>
+                            <a href="https://github.com/devkantgupta01/game" target="_blank"
+                                rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                    <div class="work">
+                        <img src="images/scientific_calculator.jpg">
+                        <div class="layer">
+                            <h3>Basic Scientific Calculator in C++</h3>
+                            <p>I built a basic scientific calculator in C++ for simple and scientific calculations.</p>
+                            <a href="https://github.com/devkantgupta01/2nd-year-projects/blob/main/Project_Calculator.cpp"
+                                target="_blank" rel="noopener noreferrer"><i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
                 </div>
-                <a href="/images/DEV'S Resume.pdf" download class="btn btn2">Download CV</a>
+                <a href="https://devkantgupta01.github.io/Coming-Soon/" target="_blank" rel="noopener noreferrer"
+                    class="btn btn2">See More</a>
             </div>
-            <div class="contact-right">
-                <form name="submit-to-google-sheet">
-                    <input type="text" name="Name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-                    <button type="submit" class="btn btn2">Submit</button>
-                </form>
-                <span id="msg"></span>
+        </section>
+
+        <!-- ------------------------------------------------------------------------------------- Friend section --------------------------------------------- -->
+        <!-- 07-june-2025 (saturday) -->
+        <section id="friends" data-bg="#333446">
+            <div class="friends-container">
+                <h1 class="friends-title">
+                    <span class="text">My Friends </span>
+                </h1>
+
+
+
+                <div class="rf-cards-scroller-platter" role="list" aria-label="Friends gallery">
+
+                    <!-- Friend Card 1 -->
+                    <div class="rf-cards-scroller-itemview" role="listitem">
+                        <div class="rf-ccard rf-ccard-purple">
+                            <div class="rf-ccard-content">
+                                <div class="rf-ccard-img-full-wrapper">
+                                    <img src="/Friends_images/Mohneesh.jpg" alt="Friend 1" class="rf-ccard-img-full">
+                                </div>
+                                <div class="rf-ccard-content-info">
+                                    <div class="rf-ccard-content-header">
+                                        <a href="#" class="rf-ccard-content-headerlink">Mohneesh Gupta</a>
+                                    </div>
+                                    <div class="rf-ccard-content-desc">
+                                        <span class="rf-ccard-content-desccontent">
+                                            Full Stack Developer
+                                        </span>
+                                        <span class="rf-ccard-content-descprice">
+                                            Coding buddy & project collaborator
+                                        </span>
+                                        <div class="friend-social-icons">
+                                            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                            <a href="#"><i class="fa-brands fa-github"></i></a>
+                                            <!-- <a href="#"><i class="fa-brands fa-instagram"></i></a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Friend Card 2 -->
+                    <div class="rf-cards-scroller-itemview" role="listitem">
+                        <div class="rf-ccard rf-ccard-blue">
+                            <div class="rf-ccard-content">
+                                <div class="rf-ccard-img-full-wrapper">
+                                    <img src="/Friends_images/Gulshan.jpg" alt="Friend 2" class="rf-ccard-img-full">
+                                </div>
+                                <div class="rf-ccard-content-info">
+                                    <div class="rf-ccard-content-header">
+                                        <a href="#" class="rf-ccard-content-headerlink">Gupshan Kumar</a>
+                                    </div>
+                                    <div class="rf-ccard-content-desc">
+                                        <span class="rf-ccard-content-desccontent">
+                                            Web Developer
+                                            <!-- Cybersecurity Analyst & Ethical Hacker -->
+                                        </span>
+                                        <span class="rf-ccard-content-descprice">
+                                            Study partner
+                                        </span>
+                                        <div class="friend-social-icons">
+                                            <!-- <a href="#"><i class="fa-brands fa-twitter"></i></a> -->
+                                            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                            <a href="#"><i class="fa-brands fa-github"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Friend Card 3 -->
+                    <div class="rf-cards-scroller-itemview" role="listitem">
+                        <div class="rf-ccard rf-ccard-green">
+                            <div class="rf-ccard-content">
+                                <div class="rf-ccard-img-full-wrapper">
+                                    <img src="/Friends_images/Hardik.jpg" alt="Friend 3" class="rf-ccard-img-full">
+                                </div>
+                                <div class="rf-ccard-content-info">
+                                    <div class="rf-ccard-content-header">
+                                        <a href="#" class="rf-ccard-content-headerlink">Hardik Jain</a>
+                                    </div>
+                                    <div class="rf-ccard-content-desc">
+                                        <span class="rf-ccard-content-desccontent">
+                                            C++ & web Developer
+                                        </span>
+                                        <span class="rf-ccard-content-descprice">
+                                            YouTube collaboration partner
+
+                                        </span>
+                                        <div class="friend-social-icons">
+                                            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                            <a href="#"><i class="fa-brands fa-github"></i></a>
+                                            <!-- <a href="#"><i class="fa-brands fa-kaggle"></i></a> -->
+                                            <!-- <a href="#"><i class="fa-brands fa-medium"></i></a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Friend Card 4 -->
+                    <div class="rf-cards-scroller-itemview" role="listitem">
+                        <div class="rf-ccard rf-ccard-orange">
+                            <div class="rf-ccard-content">
+                                <div class="rf-ccard-img-full-wrapper">
+                                    <img src="/Friends_images/Pritam.jpg" alt="Friend 4" class="rf-ccard-img-full">
+                                </div>
+                                <div class="rf-ccard-content-info">
+                                    <div class="rf-ccard-content-header">
+                                        <a href="#" class="rf-ccard-content-headerlink">Pritam Kumar</a>
+                                    </div>
+                                    <div class="rf-ccard-content-desc">
+                                        <span class="rf-ccard-content-desccontent">
+                                            Artificial Intelligence
+                                        </span>
+                                        <span class="rf-ccard-content-descprice">
+                                            Mama-Bhanja
+                                        </span>
+                                        <div class="friend-social-icons">
+                                            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                            <a href="#"><i class="fa-brands fa-github"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Friend Card 5 -->
+                    <div class="rf-cards-scroller-itemview" role="listitem">
+                        <div class="rf-ccard rf-ccard-red">
+                            <div class="rf-ccard-content">
+                                <div class="rf-ccard-img-full-wrapper">
+                                    <img src="/Friends_images/Dev.jpg" alt="Friend 5" class="rf-ccard-img-full">
+                                </div>
+                                <div class="rf-ccard-content-info">
+                                    <div class="rf-ccard-content-header">
+                                        <a href="#" class="rf-ccard-content-headerlink">Dev Ray</a>
+                                    </div>
+                                    <div class="rf-ccard-content-desc">
+                                        <span class="rf-ccard-content-desccontent">
+                                            Full stack developer
+                                        </span>
+                                        <span class="rf-ccard-content-descprice">
+                                            Best friend since college days
+                                        </span>
+                                        <div class="friend-social-icons">
+                                            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                            <a href="#"><i class="fa-brands fa-github"></i></a>
+                                            <!-- <a href="#"><i class="fa-brands fa-twitter"></i></a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Friend Card 6 -->
+                    <div class="rf-cards-scroller-itemview" role="listitem">
+                        <div class="rf-ccard rf-ccard-teal">
+                            <div class="rf-ccard-content">
+                                <div class="rf-ccard-img-full-wrapper">
+                                    <img src="/Friends_images/Bablu.jpg" alt="Friend 6" class="rf-ccard-img-full">
+                                </div>
+                                <div class="rf-ccard-content-info">
+                                    <div class="rf-ccard-content-header">
+                                        <a href="#" class="rf-ccard-content-headerlink">Bablu Kumar</a>
+                                    </div>
+                                    <div class="rf-ccard-content-desc">
+                                        <span class="rf-ccard-content-desccontent">
+                                            Full stack developer
+                                        </span>
+                                        <span class="rf-ccard-content-descprice">
+                                            Hackathon partner
+                                        </span>
+                                        <div class="friend-social-icons">
+                                            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                            <a href="#"><i class="fa-brands fa-github"></i></a>
+                                            <!-- <a href="#"><i class="fa-brands fa-dribbble"></i></a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!------------------------------------------------------------ Duplicate cards for seamless loop ------------------------------------------------------>
+                    <!-- Friend Card 1 (duplicate) -->
+                    <div class="rf-cards-scroller-itemview" role="listitem">
+                        <div class="rf-ccard rf-ccard-purple">
+                            <div class="rf-ccard-content">
+                                <div class="rf-ccard-img-full-wrapper">
+                                    <img src="/Friends_images/Mohneesh.jpg" alt="Friend 1" class="rf-ccard-img-full">
+                                </div>
+                                <div class="rf-ccard-content-info">
+                                    <div class="rf-ccard-content-header">
+                                        <a href="#" class="rf-ccard-content-headerlink">Mohneesh Gupta</a>
+                                    </div>
+                                    <div class="rf-ccard-content-desc">
+                                        <span class="rf-ccard-content-desccontent">
+                                            Full Stack Developer
+                                        </span>
+                                        <span class="rf-ccard-content-descprice">
+                                            Coding buddy & project collaborator
+                                        </span>
+                                        <div class="friend-social-icons">
+                                            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                            <a href="#"><i class="fa-brands fa-github"></i></a>
+                                            <!-- <a href="#"><i class="fa-brands fa-instagram"></i></a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Friend Card 2 (duplicate) -->
+                    <div class="rf-cards-scroller-itemview" role="listitem">
+                        <div class="rf-ccard rf-ccard-blue">
+                            <div class="rf-ccard-content">
+                                <div class="rf-ccard-img-full-wrapper">
+                                    <img src="/Friends_images/Gulshan.jpg" alt="Friend 2" class="rf-ccard-img-full">
+                                </div>
+                                <div class="rf-ccard-content-info">
+                                    <div class="rf-ccard-content-header">
+                                        <a href="#" class="rf-ccard-content-headerlink">Gupshan Kumar</a>
+                                    </div>
+                                    <div class="rf-ccard-content-desc">
+                                        <span class="rf-ccard-content-desccontent">
+                                            Web Developer
+                                            <!-- Cybersecurity Analyst & Ethical Hacker -->
+                                        </span>
+                                        <span class="rf-ccard-content-descprice">
+                                            Study partner
+                                        </span>
+                                        <div class="friend-social-icons">
+                                            <!-- <a href="#"><i class="fa-brands fa-twitter"></i></a> -->
+                                            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                            <a href="#"><i class="fa-brands fa-github"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Friend Card 3 (duplicate) -->
+                    <div class="rf-cards-scroller-itemview" role="listitem">
+                        <div class="rf-ccard rf-ccard-green">
+                            <div class="rf-ccard-content">
+                                <div class="rf-ccard-img-full-wrapper">
+                                    <img src="/Friends_images/Hardik.jpg" alt="Friend 3" class="rf-ccard-img-full">
+                                </div>
+                                <div class="rf-ccard-content-info">
+                                    <div class="rf-ccard-content-header">
+                                        <a href="#" class="rf-ccard-content-headerlink">Hardik Jain</a>
+                                    </div>
+                                    <div class="rf-ccard-content-desc">
+                                        <span class="rf-ccard-content-desccontent">
+                                            C++ & web Developer
+                                        </span>
+                                        <span class="rf-ccard-content-descprice">
+                                            YouTube collaboration partner
+
+                                        </span>
+                                        <div class="friend-social-icons">
+                                            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                            <a href="#"><i class="fa-brands fa-github"></i></a>
+                                            <!-- <a href="#"><i class="fa-brands fa-kaggle"></i></a> -->
+                                            <!-- <a href="#"><i class="fa-brands fa-medium"></i></a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Friend Card 4 (duplicate) -->
+                    <div class="rf-cards-scroller-itemview" role="listitem">
+                        <div class="rf-ccard rf-ccard-orange">
+                            <div class="rf-ccard-content">
+                                <div class="rf-ccard-img-full-wrapper">
+                                    <img src="/Friends_images/Pritam.jpg" alt="Friend 4" class="rf-ccard-img-full">
+                                </div>
+                                <div class="rf-ccard-content-info">
+                                    <div class="rf-ccard-content-header">
+                                        <a href="#" class="rf-ccard-content-headerlink">Pritam Kumar</a>
+                                    </div>
+                                    <div class="rf-ccard-content-desc">
+                                        <span class="rf-ccard-content-desccontent">
+                                            Artificial Intelligence
+                                        </span>
+                                        <span class="rf-ccard-content-descprice">
+                                            Mama-Bhanja
+                                        </span>
+                                        <div class="friend-social-icons">
+                                            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                            <a href="#"><i class="fa-brands fa-github"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Friend Card 5 (duplicate) -->
+                        <div class="rf-cards-scroller-itemview" role="listitem">
+                            <div class="rf-ccard rf-ccard-red">
+                                <div class="rf-ccard-content">
+                                    <div class="rf-ccard-img-full-wrapper">
+                                        <img src="/Friends_images/Dev.jpg" alt="Friend 5" class="rf-ccard-img-full">
+                                    </div>
+                                    <div class="rf-ccard-content-info">
+                                        <div class="rf-ccard-content-header">
+                                            <a href="#" class="rf-ccard-content-headerlink">Dev Ray</a>
+                                        </div>
+                                        <div class="rf-ccard-content-desc">
+                                            <span class="rf-ccard-content-desccontent">
+                                                Full stack developer
+                                            </span>
+                                            <span class="rf-ccard-content-descprice">
+                                                Best friend since college days
+                                            </span>
+                                            <div class="friend-social-icons">
+                                                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                                <a href="#"><i class="fa-brands fa-github"></i></a>
+                                                <!-- <a href="#"><i class="fa-brands fa-twitter"></i></a> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Friend Card 6 (duplicate) -->
+                        <div class="rf-cards-scroller-itemview" role="listitem">
+                            <div class="rf-ccard rf-ccard-teal">
+                                <div class="rf-ccard-content">
+                                    <div class="rf-ccard-img-full-wrapper">
+                                        <img src="/Friends_images/Bablu.jpg" alt="Friend 6" class="rf-ccard-img-full">
+                                    </div>
+                                    <div class="rf-ccard-content-info">
+                                        <div class="rf-ccard-content-header">
+                                            <a href="#" class="rf-ccard-content-headerlink">Bablu Kumar</a>
+                                        </div>
+                                        <div class="rf-ccard-content-desc">
+                                            <span class="rf-ccard-content-desccontent">
+                                                Full stack developer
+                                            </span>
+                                            <span class="rf-ccard-content-descprice">
+                                                Hackathon partner
+                                            </span>
+                                            <div class="friend-social-icons">
+                                                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                                <a href="#"><i class="fa-brands fa-github"></i></a>
+                                                <!-- <a href="#"><i class="fa-brands fa-dribbble"></i></a> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+        </section>
+
+        <!-- ----------------------------------------------------------------------------------------    contact ------------------------------------------------------------------------------------------------- -->
+        <section id="contact" data-bg="#000000">
+            <div class="container">
+                <div class="row">
+                    <div class="contact-left">
+                        <h1 class="sub-title">Contact Me</h1>
+                        <p><i class="fa-solid fa-envelope"></i>devkantgupta@gmail.com</p>
+                        <p><i class="fa-solid fa-phone-volume"></i>6200XXXX08</p>
+                        <div class="social-icons">
+                            <a href="https://www.instagram.com/devkantgupta01?igsh=MTE3emptb2JtanVpZg==" target="_blank"
+                                rel="noopener noreferrer"><i class="fa-brands fa-instagram instagram-icon"></i></a>
+                            <a href="https://youtube.com/@devkantgupta01?si=-M-WMk88xRYnv6NQ" target="_blank"
+                                rel="noopener noreferrer"><i class="fa-brands fa-youtube youtube-icon"></i></a>
+                            <a href="https://www.linkedin.com/in/devkant-gupta-58754a297?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                                target="_blank" rel="noopener noreferrer"><i
+                                    class="fa-brands fa-linkedin linkedin-icon"></i></a>
+                            <a href="https://example.com/" target="_blank" rel="noopener noreferrer"><i
+                                    class="fa-brands fa-square-facebook facebook-icon"></i></a>
+                        </div>
+                        <a href="/images/DEV'S Resume.pdf" download class="btn btn2">Download CV</a>
+                    </div>
+                    <div class="contact-right">
+                        <form name="submit-to-google-sheet">
+                            <input type="text" name="Name" placeholder="Your Name" required>
+                            <input type="email" name="email" placeholder="Your Email" required>
+                            <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                            <button type="submit" class="btn btn2">Submit</button>
+                        </form>
+                        <span id="msg"></span>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p> © 2025 Dev Gupta — Designed & Developed with 🩵 by Dev Gupta. All rights reserved.</p>
+                </div>
             </div>
-        </div>
-        <div class="copyright">
-            <p> © 2025 Dev Gupta — Designed & Developed with 🩵 by Dev Gupta. All rights reserved.</p>
-        </div>
-    </div>
-</section>
-</main>
+        </section>
+
+
+        <!-- --------------------------------------------------------------------------------------------------------------------------------- -->
+
+
+    </main>
 
 
 
@@ -202,40 +607,42 @@
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <script src="script.js"></script>
 
-     <script>
+    <script>
         var sidemenu = document.getElementById("sidemenu");
-        function openmenu(){
+        function openmenu() {
             sidemenu.style.right = "0";
         }
-        function closemenu(){
+        function closemenu() {
             sidemenu.style.right = "-200px";
         }
     </script>
 
 
-         <!-- JS for smooth background transitions -->
-  <script>
-    const main = document.getElementById('main');
-    const sections = document.querySelectorAll('section');
+    <!-- JS for smooth background transitions -->
+    <script>
+        const main = document.getElementById('main');
+        const sections = document.querySelectorAll('section');
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const bgColor = entry.target.getAttribute('data-bg');
-            main.style.backgroundColor = bgColor;
-          }
-        });
-      },
-      {
-        threshold: 0.5,
-      }
-    );
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const bgColor = entry.target.getAttribute('data-bg');
+                        main.style.backgroundColor = bgColor;
+                    }
+                });
+            },
+            {
+                threshold: 0.5,
+            }
+        );
 
-    sections.forEach((section) => observer.observe(section));
-  </script>
+        sections.forEach((section) => observer.observe(section));
+    </script>
 
+    <script src="https://kit.fontawesome.com/01c6fe5725.js" crossorigin="anonymous"></script>
 
 
 </body>
+
 </html>
