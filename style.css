@@ -100,7 +100,7 @@ nav ul li a {
 
 nav ul li a:hover {
    background-color: transparent;
-   color: #ff4b6e;
+   /* color: #ff4b6e; */
    transform: scale(1.05);
    box-shadow: 0 0 8px rgba(255, 255, 255, 0.908);
 }
@@ -120,6 +120,8 @@ nav ul li a:hover::after {
    width: 100%;
 }
 
+
+/*  */
 .hero {
    display: flex;
    align-items: center;
@@ -558,6 +560,31 @@ model-viewer:hover {
    flex-basis: 60%;
 }
 
+.contact-left, .contact-right {
+   background: rgba(255, 255, 255, 0.05);
+   border-radius: 15px;
+   padding: 30px;
+   backdrop-filter: blur(10px);
+   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.contact-right input, .contact-right textarea {
+   width : 100%;
+   padding: 10px;
+   margin-bottom: 15px;
+   background: #111;
+   border: 1px solid #444;
+   color: #fff;
+   border-radius: 8px;
+   transition: 0.3s ease;
+}
+
+.contact-right input:focus, .contact-right textarea:focus {
+   border-color: #ff004f;
+   outline: none;
+   box-shadow: 0 0 10px #ff004f50;
+}
+
 .contact-left p {
    margin-top: 30px;
 
@@ -582,6 +609,73 @@ model-viewer:hover {
    display: inline-block;
    transition: transform 0.5s;
 }
+
+.btn2 {
+   background: linear-gradient(135deg, #ff004f, #ff007f);
+    border: none;
+   color: white;
+   padding: 12px 28px;
+   border-radius: 50px;
+   font-weight: bold;
+   transition: all 0.3s ease;
+   cursor: pointer;
+}
+
+.btn2:hover {
+   transform: scale(1.05);
+   box-shadow: 0 0 15px #ff004f80;
+}
+
+.small-text {
+  font-size: 1.1rem;
+  color: #dddddd;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+  line-height: 1.6;
+  animation: fadeInUp 1.5s ease-out forwards;
+  opacity: 0;
+}
+
+.sub-title-contect {
+  font-size: 2.8rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #ff004f, #ff7eb3);
+    background-clip: text;              /* standard (mostly ignored) */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+  animation: slideFadeIn 1s ease-out forwards;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.sub-title-contect::after {
+  display: block;
+  width: 60px;
+  height: 3px;
+  margin: 10px auto 0 auto;
+  background: #ff004f;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.sub-title-contect:hover::after {
+  width: 90px;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+
 
 /* --------------------------------------------------- */
 .instagram-icon:hover {
@@ -667,24 +761,48 @@ form .btn2 {
    cursor: pointer;
 }
 
+/* --------------------------------------------------------------copy right --------------------------------------- */
 .copyright {
-   width: 100vw !important;
-   position: relative;
-   left: 50%;
-   right: 50%;
-   margin-left: -50vw;
-   margin-right: 50vw;
-   background: #252626;
-   text-align: center;
-
+  text-align: center;
+  font-size: 0.95rem;
+  color: #aaa;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 15px 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 30px;
 }
 
-.copyright i {
-   color: yellow;
+.copyright p {
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: 0.3px;
 }
 
+.your-name {
+  font-weight: 600;
+  color: #ff004f;
+}
+
+.heart-icon {
+  color: #01a2ff;
+  animation: pulse 1.5s infinite;
+  margin: 0 5px;
+}
 nav .fa-solid {
    display: none;
+}
+
+/* Optional: heart animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 /* ----------------------------------------------------------------------- CSS for small screens ----------------------------------------------------------------------------------------- */
@@ -765,45 +883,71 @@ nav .fa-solid {
       font-size: 25px;
    }
 
-   nav ul {
-      background: linear-gradient(145deg,
-            #ff004f,
-            #ff00a2,
-            #b300ff,
-            #0062ff);
-      /* Keep your existing properties */
-      box-shadow: inset 0 -10px 25px rgba(0, 0, 0, 0.2);
-      position: fixed;
-      top: 0;
-      right: -200px;
-      width: 200px;
-      height: 100vh;
-      padding-top: 50px;
-      z-index: 2;
-      transition: right 0.5s;
+/* Base menu (hidden on mobile) */
+nav ul {
+  list-style: none;
+  position: fixed;
+  right: -200px;
+  top: 0;
+  background: #12293f;
+  height: 100vh;
+  width: 200px;
+  z-index: 1000;
+  transition: right 0.3s ease;
+  padding-top: 60px;
+  flex-direction: column;
+}
 
-   }
+nav ul li {
+  margin: 20px 0;
+  text-align: center;
+}
 
-   nav ul li:hover {
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
 
-      background-color: rgb(0, 0, 0);
-      border-radius: 4px;
-      width: 100px;
+/* Menu open icon (hamburger) */
+nav .fa-bars {
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+  display: none;
+}
+
+/* Close icon inside menu */
+nav .fa-square-xmark {
+  color: white;
+  font-size: 25px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+/* Show hamburger on small screens */
+@media only screen and (max-width: 768px) {
+  nav .fa-bars {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li {
+    display: block;
+  }
+}
 
 
-   }
 
-   nav ul li {
-      display: block;
-      margin: 25px;
-   }
 
-   nav ul .fa-solid {
-      position: absolute;
-      top: 25px;
-      left: 25px;
-      cursor: pointer;
-   }
+ 
+
+  
 
    /* -----------------------------------------------------------------for about section ---------------------------------------------- */
    #about {
@@ -1145,36 +1289,65 @@ nav .fa-solid {
       font-size: 25px;
    }
 
-   nav ul {
-      background: linear-gradient(145deg, #ff004f, #ff00a2, #b300ff, #0062ff);
-      box-shadow: inset 0 -10px 25px rgba(0, 0, 0, 0.2);
-      position: fixed;
-      top: 0;
-      right: -200px;
-      width: 200px;
-      height: 100vh;
-      padding-top: 50px;
-      z-index: 2;
-      transition: right 0.5s;
-   }
+/* Base menu (hidden on mobile) */
+nav ul {
+  list-style: none;
+  position: fixed;
+  right: -200px;
+  top: 0;
+  background: #12293f;
+  height: 100vh;
+  width: 200px;
+  z-index: 1000;
+  transition: right 0.3s ease;
+  padding-top: 60px;
+  flex-direction: column;
+}
 
-   nav ul li:hover {
-      background-color: rgb(0, 0, 0);
-      border-radius: 4px;
-      width: 100px;
-   }
+nav ul li {
+  margin: 20px 0;
+  text-align: center;
+}
 
-   nav ul li {
-      display: block;
-      margin: 25px;
-   }
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
 
-   nav ul .fa-solid {
-      position: absolute;
-      top: 25px;
-      left: 25px;
-      cursor: pointer;
-   }
+/* Menu open icon (hamburger) */
+nav .fa-bars {
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+  display: none;
+}
+
+/* Close icon inside menu */
+nav .fa-square-xmark {
+  color: white;
+  font-size: 25px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+/* Show hamburger on small screens */
+@media only screen and (max-width: 768px) {
+  nav .fa-bars {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li {
+    display: block;
+  }
+}
+
 
    /* -------------------------------------------------- ABOUT SECTION ---------------------------------------------------- */
    #about {
@@ -1336,6 +1509,7 @@ nav .fa-solid {
    .contact-right {
       flex-basis: 100%;
       width: 100%;
+      margin: 10px;
    }
 
    .contact-left p {
@@ -1386,3 +1560,72 @@ nav .fa-solid {
       font-size: 20px;
    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#popup-message {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  max-width: 90%;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  background: linear-gradient(135deg, #1A3B5D, #154265);
+  color: #D1F2FF;
+  font-size: 15px;
+  font-weight: 500;
+  border-left: 4px solid #00E0FF;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 224, 255, 0.25);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: 9999;
+}
+
+#popup-message.show-popup {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#popup-message::before {
+  content: '✅';
+  font-size: 18px;
+  animation: pop 0.3s ease-in-out;
+}
+
+/* Animation for the icon */
+@keyframes pop {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  #popup-message {
+    bottom: 20px;
+    right: 20px;
+    font-size: 14px;
+    padding: 12px 16px;
+    gap: 8px;
+  }
+}
+
