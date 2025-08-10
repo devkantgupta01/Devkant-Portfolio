@@ -1,4 +1,5 @@
 
+
 var tablinks = document.getElementsByClassName("tab-links");
 var tabcontents = document.getElementsByClassName("tab-contents");
 function opentab(tabname) {
@@ -13,6 +14,117 @@ function opentab(tabname) {
   document.getElementById(tabname).classList.add("active-tab");
 
 }
+
+
+
+
+
+
+
+let sidemenu = document.getElementById("sidemenu");
+
+// Open the side menu
+function openmenu() {
+  sidemenu.style.right = "0";
+  document.addEventListener("click", outsideClickListener);
+}
+
+// Close the side menu
+function closemenu() {
+  sidemenu.style.right = "-200px";
+  document.removeEventListener("click", outsideClickListener);
+}
+
+// Close if clicked outside
+function outsideClickListener(event) {
+  const isClickInside = sidemenu.contains(event.target) || event.target.classList.contains("fa-bars");
+  if (!isClickInside) {
+    closemenu();
+  }
+}
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollerPlatter = document.querySelector('.rf-cards-scroller-platter');
+const scrollerContainer = document.querySelector('.rf-cards-scroller-wrapper');
+    const playPauseBtn = document.querySelector('.rf-play-pause');
+    
+    // Clone items for seamless looping
+    const items = scrollerPlatter.querySelectorAll('.rf-cards-scroller-itemview');
+    items.forEach(item => {
+        const clone = item.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        scrollerPlatter.appendChild(clone);
+    });
+    
+    // Auto-scroll animation
+    let animation;
+    let speed = 40; // seconds for full animation
+    
+    function startAnimation() {
+      
+        scrollerPlatter.style.animation = `scroll-left ${speed}s linear infinite`;
+        if (playPauseBtn) playPauseBtn.classList.add('playing');
+    }
+    
+    function pauseAnimation() {
+        scrollerPlatter.style.animationPlayState = 'paused';
+        if (playPauseBtn) playPauseBtn.classList.remove('playing');
+    }
+    
+    // Play/Pause control
+    if (playPauseBtn) {
+        playPauseBtn.addEventListener('click', function() {
+            if (this.classList.contains('playing')) {
+                pauseAnimation();
+            } else {
+                startAnimation();
+            }
+        });
+    }
+    
+    // Start animation initially
+    startAnimation();
+    
+    // Pause on hover
+   scrollerPlatter.addEventListener('mouseenter', () => {
+  scrollerPlatter.style.animationPlayState = 'paused';
+});
+
+scrollerPlatter.addEventListener('mouseleave', () => {
+  scrollerPlatter.style.animationPlayState = 'running';
+});
+
+    
+    // Touch device handling
+    if ('ontouchstart' in window) {
+        scrollerPlatter.style.animation = 'none';
+        scrollerPlatter.style.overflowX = 'auto';
+        scrollerPlatter.style.WebkitOverflowScrolling = 'touch';
+        
+        if (playPauseBtn) playPauseBtn.style.display = 'none';
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -98,7 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const next = () => {
     fx.setText(phrases[counter]).then(() => {
-      setTimeout(next, 1000);
+      setTimeout(next, 2000);
     });
     counter = (counter + 1) % phrases.length;
   };
@@ -228,3 +340,43 @@ function resizeCanvas() {
   start_y = canvasHeight / 2;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwyQTRMmVHd4Posz5tf3jssotor_i3eIT7j7_ZO79PCL3D8xWJAKmomrHD3qBNiw8kF/exec';
+const form = document.forms['submit-to-google-sheet'];
+const popup = document.getElementById('popup-message');
+
+form.addEventListener('submit', e => {
+  e.preventDefault();
+
+  fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+    .then(response => {
+      // Show styled popup
+      popup.style.display = 'block';
+      popup.classList.add('show-popup');
+
+      setTimeout(() => {
+        popup.classList.remove('show-popup');
+        popup.style.display = 'none';
+      }, 3000); // Hide after 3 seconds
+
+      form.reset(); // Clear the form
+    })
+    .catch(error => console.error('Error!', error.message));
+});
