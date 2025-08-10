@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev's Portfolio | Coming Soon</title>
+    <link rel="icon" type="image/png" href="images/logo_preview_rev_1.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #6e45e2;
+            --secondary-color: #88d3ce;
+            --text-color: rgba(255, 255, 255, 0.9);
+            --text-muted: rgba(255, 255, 255, 0.6);
+            --bg-dark: #0f0f1a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--bg-dark), #1a1a2e);
+            color: var(--text-color);
+            min-height: 100vh;
+            overflow-x: hidden;
+            line-height: 1.6;
+            padding-top: 50px;
+        }
+
+        #header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            background: transparent;
+            z-index: 1000;
+        }
+
+        #header .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        #header .logo {
+            height: auto;
+            max-width: 190px;
+            width: 100%;
+            margin-top: -30px;
+            transition: transform 0.3s ease;
+        }
+
+        #header .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .nav {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .home-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .home-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .home-button i {
+            font-size: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            color: var(--text-muted);
+        }
+
+        .countdown {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 1rem;
+            min-width: 80px;
+            flex: 1;
+            max-width: 120px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .countdown-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .countdown-number {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            font-weight: 700;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .countdown-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+
+        .notify-form {
+            display: flex;
+            max-width: 500px;
+            width: 100%;
+            margin: 2rem 0;
+            flex-direction: column;
+        }
+
+        .notify-input {
+            flex: 1;
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+            margin-bottom: 1rem;
+        }
+
+        .notify-input:focus {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .notify-button {
+            padding: 1rem;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .notify-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(110, 69, 226, 0.4);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .social-link {
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .floating-shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            filter: blur(40px);
+        }
+
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            background: var(--primary-color);
+            top: -100px;
+            left: -100px;
+        }
+
+        .shape-2 {
+            width: 400px;
+            height: 400px;
+            background: var(--secondary-color);
+            bottom: -150px;
+            right: -100px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 120px;
+            }
+
+            #header .logo {
+                max-width: 150px;
+            }
+
+            .nav {
+                top: 15px;
+                right: 15px;
+            }
+
+            .container {
+                padding: 1.5rem;
+            }
+
+            .countdown {
+                gap: 0.5rem;
+            }
+
+            .countdown-item {
+                min-width: 70px;
+                padding: 0.8rem;
+            }
+
+            .social-links {
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding-top: 100px;
+            }
+
+            #header .logo {
+                max-width: 180px;
+            }
+
+            .countdown-item {
+                min-width: 60px;
+                padding: 0.6rem;
+            }
+
+            .countdown-number {
+                font-size: 1.5rem;
+            }
+
+            .countdown-label {
+                font-size: 0.6rem;
+            }
+
+            .notify-form {
+                margin: 1rem 0;
+            }
+
+            .social-links {
+                gap: 0.8rem;
+            }
+
+            .social-link {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <div class="container">
+            <img src="images/logo_preview_rev_1.png" alt="Dev's logo" class="logo">
+        </div>
+    </div>
+
+    <nav class="nav">
+        <a href="index.html" class="home-button">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+    </nav>
+
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+    </div>
+
+    <div class="container">
+        <h1>Something Amazing is Coming Soon</h1>
+        <p class="subtitle">We're working hard to bring you an incredible experience. Stay tuned for our launch!</p>
+
+        <div class="countdown">
+            <div class="countdown-item">
+                <div class="countdown-number" id="days">00</div>
+                <div class="countdown-label">Days</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="hours">00</div>
+                <div class="countdown-label">Hours</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="minutes">00</div>
+                <div class="countdown-label">Minutes</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="seconds">00</div>
+                <div class="countdown-label">Seconds</div>
+            </div>
+        </div>
+
+        <form class="notify-form">
+            <input type="email" class="notify-input" placeholder="Enter your email for updates" required>
+            <button type="submit" class="notify-button">Notify Me</button>
+        </form>
+
+        <div class="social-links">
+            <a href="https://www.instagram.com/devkantgupta01?igsh=MTE3emptb2JtanVpZg==" target="_blank"
+                rel="noopener noreferrer"" class=" social-link"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/devkant-gupta-58754a297?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                target="_blank" rel="noopener noreferrer" class="social-link"><i class="fab fa-linkedin"></i></a>
+            <a href="https://example.com/" target="_blank" rel="noopener noreferrer"" class=" social-link"><i
+                    class="fab fa-facebook"></i></a>
+        </div>
+    </div>
+
+    <script>
+        let previousValues = {
+            days: '00',
+            hours: '00',
+            minutes: '00',
+            seconds: '00'
+        };
+
+        function updateCountdown() {
+            const launchDate = new Date('2024-01-01T00:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = launchDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
+
+            if (days !== previousValues.days) {
+                animateNumber('days', days);
+                previousValues.days = days;
+            }
+            if (hours !== previousValues.hours) {
+                animateNumber('hours', hours);
+                previousValues.hours = hours;
+            }
+            if (minutes !== previousValues.minutes) {
+                animateNumber('minutes', minutes);
+                previousValues.minutes = minutes;
+            }
+            if (seconds !== previousValues.seconds) {
+                animateNumber('seconds', seconds);
+                previousValues.seconds = seconds;
+            }
+        }
+
+        function animateNumber(elementId, newValue) {
+            const element = document.getElementById(elementId);
+            element.classList.add('changed');
+            element.textContent = newValue;
+
+            setTimeout(() => {
+                element.classList.remove('changed');
+            }, 500);
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        document.querySelector('.notify-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const email = this.querySelector('.notify-input').value;
+
+            const confirmation = document.createElement('div');
+            confirmation.textContent = `Thank you! We'll notify you at ${email}`;
+            confirmation.style.color = 'var(--secondary-color)';
+            confirmation.style.marginTop = '1rem';
+
+            this.parentNode.insertBefore(confirmation, this.nextSibling);
+
+            this.querySelector('.notify-input').value = '';
+
+            setTimeout(() => {
+                confirmation.remove();
+            }, 5000);
+        });
+    </script>
+</body>
+
+</html>
