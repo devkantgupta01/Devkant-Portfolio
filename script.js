@@ -52,66 +52,305 @@ function outsideClickListener(event) {
 
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    const scrollerPlatter = document.querySelector('.rf-cards-scroller-platter');
-const scrollerContainer = document.querySelector('.rf-cards-scroller-wrapper');
-    const playPauseBtn = document.querySelector('.rf-play-pause');
-    
-    // Clone items for seamless looping
-    const items = scrollerPlatter.querySelectorAll('.rf-cards-scroller-itemview');
-    items.forEach(item => {
-        const clone = item.cloneNode(true);
-        clone.setAttribute('aria-hidden', 'true');
-        scrollerPlatter.appendChild(clone);
-    });
-    
-    // Auto-scroll animation
-    let animation;
-    let speed = 40; // seconds for full animation
-    
-    function startAnimation() {
-      
-        scrollerPlatter.style.animation = `scroll-left ${speed}s linear infinite`;
-        if (playPauseBtn) playPauseBtn.classList.add('playing');
+
+
+
+// Friends Auto-Scroll JavaScript
+class FriendsAutoScroll {
+    constructor() {
+        this.scrollContainer = document.querySelector('.rf-cards-scroller-platter');
+        this.cards = document.querySelectorAll('.rf-cards-scroller-itemview');
+        this.isScrolling = true;
+        this.scrollSpeed = 40; // seconds for one complete cycle
+        this.currentTranslation = 0;
+        this.animationId = null;
+        
+        this.init();
     }
     
-    function pauseAnimation() {
-        scrollerPlatter.style.animationPlayState = 'paused';
-        if (playPauseBtn) playPauseBtn.classList.remove('playing');
+    init() {
+        if (!this.scrollContainer) return;
+        
+        this.setupAutoScroll();
+        this.setupHoverPause();
+        this.setupIntersectionObserver();
+        this.handleResize();
+        this.setupAccessibility();
     }
     
-    // Play/Pause control
-    if (playPauseBtn) {
-        playPauseBtn.addEventListener('click', function() {
-            if (this.classList.contains('playing')) {
-                pauseAnimation();
-            } else {
-                startAnimation();
-            }
+    setupAutoScroll() {
+        // Set CSS custom property for animation duration
+        this.scrollContainer.style.setProperty('--scroll-duration', `${this.scrollSpeed}s`);
+        
+        // Ensure seamless loop by duplicating cards if needed
+        this.ensureSeamlessLoop();
+    }
+    
+    ensureSeamlessLoop() {
+        const originalCards = Array.from(this.cards).slice(0, this.cards.length / 2);
+        const containerWidth = this.scrollContainer.offsetWidth;
+        const viewportWidth = window.innerWidth;
+        
+        // If we need more cards for smooth scrolling
+        if (containerWidth < viewportWidth * 3) {
+            originalCards.forEach(card => {
+                const clone = card.cloneNode(true);
+                this.scrollContainer.appendChild(clone);
+            });
+        }
+    }
+    
+    setupHoverPause() {
+        if (this.scrollContainer) {
+            this.scrollContainer.addEventListener('mouseenter', () => {
+                this.pauseScroll();
+            });
+            
+            this.scrollContainer.addEventListener('mouseleave', () => {
+                this.resumeScroll();
+            });
+        }
+    }
+    
+    setupIntersectionObserver() {
+        const options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    this.resumeScroll();
+                } else {
+                    this.pauseScroll();
+                }
+            });
+        }, options);
+        
+        const friendsSection = document.getElementById('friends');
+        if (friendsSection) {
+            observer.observe(friendsSection);
+        }
+    }
+    
+    pauseScroll() {
+        if (this.scrollContainer) {
+            this.scrollContainer.style.animationPlayState = 'paused';
+            this.isScrolling = false;
+        }
+    }
+    
+    resumeScroll() {
+        if (this.scrollContainer) {
+            this.scrollContainer.style.animationPlayState = 'running';
+            this.isScrolling = true;
+        }
+    }
+    
+    handleResize() {
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                this.adjustScrollSpeed();
+            }, 250);
         });
     }
     
-    // Start animation initially
-    startAnimation();
-    
-    // Pause on hover
-   scrollerPlatter.addEventListener('mouseenter', () => {
-  scrollerPlatter.style.animationPlayState = 'paused';
-});
-
-scrollerPlatter.addEventListener('mouseleave', () => {
-  scrollerPlatter.style.animationPlayState = 'running';
-});
-
-    
-    // Touch device handling
-    if ('ontouchstart' in window) {
-        scrollerPlatter.style.animation = 'none';
-        scrollerPlatter.style.overflowX = 'auto';
-        scrollerPlatter.style.WebkitOverflowScrolling = 'touch';
+    adjustScrollSpeed() {
+        const screenWidth = window.innerWidth;
+        let newSpeed = this.scrollSpeed;
         
-        if (playPauseBtn) playPauseBtn.style.display = 'none';
+        if (screenWidth < 480) {
+            newSpeed = this.scrollSpeed * 0.8; // Slower on mobile
+        } else if (screenWidth < 768) {
+            newSpeed = this.scrollSpeed * 0.9; // Slightly slower on tablet
+        }
+        
+        if (this.scrollContainer) {
+            this.scrollContainer.style.animationDuration = `${newSpeed}s`;
+        }
     }
+    
+    setupAccessibility() {
+        // Add reduced motion support
+        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            this.pauseScroll();
+            if (this.scrollContainer) {
+                this.scrollContainer.style.animation = 'none';
+            }
+        }
+        
+        // Add keyboard navigation
+        this.setupKeyboardNavigation();
+        
+        // Add ARIA labels
+        this.setupAriaLabels();
+    }
+    
+    setupKeyboardNavigation() {
+        const cards = document.querySelectorAll('.rf-ccard-content-headerlink');
+        
+        cards.forEach((card, index) => {
+            card.addEventListener('focus', () => {
+                this.pauseScroll();
+                this.scrollToCard(index);
+            });
+            
+            card.addEventListener('blur', () => {
+                setTimeout(() => {
+                    if (!document.querySelector('.rf-ccard-content-headerlink:focus')) {
+                        this.resumeScroll();
+                    }
+                }, 100);
+            });
+        });
+    }
+    
+    scrollToCard(index) {
+        const card = this.cards[index];
+        if (card && this.scrollContainer) {
+            const cardRect = card.getBoundingClientRect();
+            const containerRect = this.scrollContainer.getBoundingClientRect();
+            const scrollLeft = cardRect.left - containerRect.left;
+            
+            this.scrollContainer.style.transform = `translateX(-${scrollLeft}px)`;
+        }
+    }
+    
+    setupAriaLabels() {
+        if (this.scrollContainer) {
+            this.scrollContainer.setAttribute('aria-live', 'polite');
+            this.scrollContainer.setAttribute('aria-label', 'Auto-scrolling friends gallery');
+        }
+        
+        const cards = document.querySelectorAll('.rf-ccard');
+        cards.forEach((card, index) => {
+            card.setAttribute('tabindex', '0');
+            card.setAttribute('role', 'article');
+            card.setAttribute('aria-label', `Friend card ${index + 1}`);
+        });
+    }
+    
+    // Public methods for external control
+    setSpeed(speed) {
+        this.scrollSpeed = speed;
+        this.adjustScrollSpeed();
+    }
+    
+    stop() {
+        this.pauseScroll();
+    }
+    
+    start() {
+        this.resumeScroll();
+    }
+    
+    destroy() {
+        if (this.animationId) {
+            cancelAnimationFrame(this.animationId);
+        }
+        
+        // Remove event listeners
+        window.removeEventListener('resize', this.handleResize);
+        
+        if (this.scrollContainer) {
+            this.scrollContainer.removeEventListener('mouseenter', this.pauseScroll);
+            this.scrollContainer.removeEventListener('mouseleave', this.resumeScroll);
+        }
+    }
+}
+
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+    // Wait a bit for styles to load
+    setTimeout(() => {
+        const friendsScroll = new FriendsAutoScroll();
+        
+        // Optional: Make it globally accessible
+        window.friendsScroll = friendsScroll;
+        
+        // Optional: Add manual controls (uncomment if needed)
+        /*
+        const controlsHTML = `
+            <div class="scroll-controls" style="text-align: center; margin-top: 20px;">
+                <button onclick="friendsScroll.stop()" style="margin: 0 10px; padding: 8px 16px; background: #667eea; color: white; border: none; border-radius: 4px; cursor: pointer;">Pause</button>
+                <button onclick="friendsScroll.start()" style="margin: 0 10px; padding: 8px 16px; background: #4caf50; color: white; border: none; border-radius: 4px; cursor: pointer;">Play</button>
+            </div>
+        `;
+        
+        const friendsSection = document.getElementById('friends');
+        if (friendsSection) {
+            friendsSection.insertAdjacentHTML('beforeend', controlsHTML);
+        }
+        */
+        
+    }, 100);
+});
+
+// Optional: Touch/Swipe support for mobile
+class TouchHandler {
+    constructor(scrollContainer) {
+        this.container = scrollContainer;
+        this.startX = 0;
+        this.currentX = 0;
+        this.isDragging = false;
+        
+        this.init();
+    }
+    
+    init() {
+        if (!this.container) return;
+        
+        this.container.addEventListener('touchstart', this.handleTouchStart.bind(this), { passive: true });
+        this.container.addEventListener('touchmove', this.handleTouchMove.bind(this), { passive: false });
+        this.container.addEventListener('touchend', this.handleTouchEnd.bind(this), { passive: true });
+    }
+    
+    handleTouchStart(e) {
+        this.startX = e.touches[0].clientX;
+        this.isDragging = true;
+        
+        if (window.friendsScroll) {
+            window.friendsScroll.pauseScroll();
+        }
+    }
+    
+    handleTouchMove(e) {
+        if (!this.isDragging) return;
+        
+        e.preventDefault();
+        this.currentX = e.touches[0].clientX;
+        
+        // Optional: Add immediate visual feedback during drag
+        const diff = this.startX - this.currentX;
+        // You can implement immediate visual feedback here if needed
+    }
+    
+    handleTouchEnd(e) {
+        if (!this.isDragging) return;
+        
+        this.isDragging = false;
+        
+        // Resume auto-scroll after a delay
+        setTimeout(() => {
+            if (window.friendsScroll) {
+                window.friendsScroll.resumeScroll();
+            }
+        }, 2000);
+    }
+}
+
+// Initialize touch handler
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(() => {
+        const scrollContainer = document.querySelector('.rf-cards-scroller-platter');
+        if (scrollContainer) {
+            new TouchHandler(scrollContainer);
+        }
+    }, 150);
 });
 
 
