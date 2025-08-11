@@ -1,89 +1,75 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* Friends Section Styles with Auto-Scroll */
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: #000;
-    color: #fff;
-    overflow-x: hidden;
-}
+/* Import current font + new stylish font */
+@import url('https://fonts.bunny.net/css?family=merriweather-sans:300,400,800');
+@import url('https://fonts.bunny.net/css?family=playfair-display:400,700');
 
-/* Friends Section Styling */
+
+
+
 #friends {
     padding: 80px 0;
-    background: #000;
-    position: relative;
+    background: var(--bg-color, #333446);
     overflow: hidden;
+    position: relative;
 }
 
 .friends-container {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 0 20px;
-    position: relative;
 }
 
 .friends-title {
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-weight: 600;
-    /* text-align: center; */
-    margin-bottom: 50px;
-    /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
-    background: white;
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 3.5rem;
+    color: #fff;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif; /* New stylish font */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+/* Keep gradient text effect */
+.friends-title .text {
+    background: linear-gradient(45deg, #ffffff, #7e00fd);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text;
 }
 
-.text {
-    font-family: 'Playfair Display', serif;
-
-  font-weight: 600;
-  font-size: clamp(3rem, 5vw, 3.2rem);
-  color: #FAFAFA;
-  max-width: 90%;
-  display: inline-block;
+/* Optional: add underline effect */
+.friends-title::after {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #ffffff, #7e00fd);
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
 }
 
-/* Cards Scroller - Apple Style */
-.scroller-container {
-    position: relative;
-    overflow: hidden;
-    padding: 20px 0;
-    /* margin: 0 -10px; */
-}
 
-.scroller-inner {
+/* Auto-scrolling container */
+.rf-cards-scroller-platter {
     display: flex;
+    gap: 30px;
+    animation: autoScroll 20s linear infinite;
+    width: max-content;
     will-change: transform;
 }
 
-.rf-cards-scroller-platter {
-    display: flex;
-    gap: 20px;
-    padding: 0 10px;
-    /* transition: transform 0.5s linear; */
-    animation: scroll-left 30s linear infinite;
-    animation-play-state: running;
-    width: max-content;
+/* Pause animation on hover */
+.rf-cards-scroller-platter:hover {
+    animation-play-state: paused;
 }
 
-.rf-cards-scroller-itemview {
-    flex: 0 0 320px;
-    height: 400px;
-    position: relative;
-}
-
-.rf-cards-scroller-wrapper:hover .rf-cards-scroller-platter {
-  animation-play-state: paused;
-}
-
-
-
-@keyframes scroll-left {
+/* Keyframe for continuous scroll */
+@keyframes autoScroll {
     0% {
         transform: translateX(0);
     }
@@ -92,289 +78,240 @@ body {
     }
 }
 
-.rf-cards-scroller-platter:hover {
-    animation-play-state: paused;
+/* Card item styles */
+.rf-cards-scroller-itemview {
+    flex: 0 0 350px;
+    min-width: 350px;
 }
 
-
-/* Card Styling */
 .rf-ccard {
-    width: 100%;
-    height: 100%;
-    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
     overflow: hidden;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    height: 390px;
+    display: flex;
+    flex-direction: column;
     position: relative;
-    transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .rf-ccard:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Color variants */
+.rf-ccard-purple {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+    border-color: rgba(102, 126, 234, 0.3);
+}
+
+.rf-ccard-blue {
+    background: linear-gradient(135deg, rgba(74, 144, 226, 0.2), rgba(80, 170, 241, 0.2));
+    border-color: rgba(74, 144, 226, 0.3);
+}
+
+.rf-ccard-green {
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.2), rgba(67, 160, 71, 0.2));
+    border-color: rgba(76, 175, 80, 0.3);
 }
 
 .rf-ccard-content {
+    padding: 25px;
     height: 100%;
-    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Image Wrapper */
+/* Image styles */
 .rf-ccard-img-full-wrapper {
-    height: 100%;
-    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
     overflow: hidden;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.rf-ccard:hover .rf-ccard-img-full-wrapper {
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: scale(1.05);
 }
 
 .rf-ccard-img-full {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+    transition: all 0.3s ease;
 }
 
 .rf-ccard:hover .rf-ccard-img-full {
-    transform: scale(1.03);
+    transform: scale(1.1);
 }
 
-/* Card Info */
+/* Content info */
 .rf-ccard-content-info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 30px;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-    color: white;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .rf-ccard-content-header {
-    margin-bottom: 8px;
+    margin-bottom: 15px;
 }
 
 .rf-ccard-content-headerlink {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: white;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
     text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.rf-ccard-content-headerlink:hover {
+    transform: translateY(-2px);
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.rf-ccard-purple .rf-ccard-content-headerlink:hover {
+    color: #667eea;
+}
+
+.rf-ccard-blue .rf-ccard-content-headerlink:hover {
+    color: #4a90e2;
+}
+
+.rf-ccard-green .rf-ccard-content-headerlink:hover {
+    color: #4caf50;
 }
 
 .rf-ccard-content-desc {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+    margin-bottom: 20px;
 }
 
 .rf-ccard-content-desccontent {
-    font-size: 1rem;
-    line-height: 1.4;
-    opacity: 0.9;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 8px;
 }
 
 .rf-ccard-content-descprice {
-    font-size: 0.9rem;
-    opacity: 0.7;
-    font-weight: 500;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+    display: block;
+    font-style: italic;
 }
 
-/* Color Variations */
-.rf-ccard-purple {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
-
-.rf-ccard-blue {
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-}
-
-.rf-ccard-green {
-    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-}
-
-.rf-ccard-orange {
-    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-}
-
-.rf-ccard-red {
-    background: linear-gradient(135deg, #ff6b6b 0%, #ffa726 100%);
-}
-
-.rf-ccard-teal {
-    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-}
-
-/* Social Icons */
+/* Social icons */
 .friend-social-icons {
     display: flex;
-    gap: 12px;
-    margin-top: 12px;
+    justify-content: center;
+    gap: 15px;
+    margin-top: auto;
 }
 
 .friend-social-icons a {
-    color: white;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.8);
     font-size: 1.2rem;
-    opacity: 0.8;
-    transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .friend-social-icons a:hover {
-    opacity: 1;
-    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.4);
 }
 
-/* Play/Pause Controls (Apple Style) */
-.rf-scroller-controls {
-    position: absolute;
-    bottom: 60px;
-    right: 60px;
-    z-index: 10;
-}
-
-.rf-play-pause {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-.rf-play-pause:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-.rf-play-pause::before {
-    content: "";
-    display: block;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 8px 0 8px 14px;
-    border-color: transparent transparent transparent white;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-40%, -50%);
-}
-
-.rf-play-pause.playing::before {
-    width: 14px;
-    height: 14px;
-    border: none;
-    background: linear-gradient(
-        to right,
-        white 0%,
-        white 30%,
-        transparent 30%,
-        transparent 70%,
-        white 70%,
-        white 100%
-    );
-    transform: translate(-50%, -50%);
-}
-
-/* Responsive Design */
-@media (max-width: 1068px) {
+/* Mobile responsiveness */
+@media (max-width: 768px) {
     .rf-cards-scroller-itemview {
         flex: 0 0 280px;
-        height: 380px;
+        min-width: 280px;
     }
     
-    .rf-ccard-content-info {
-        padding: 25px;
-    }
-}
-
-@media (max-width: 768px) {
-    #friends {
-        padding: 60px 0;
+    .rf-ccard {
+        height: 400px;
     }
     
-    .friends-title {
-        margin-bottom: 40px;
-    }
-    
-    .rf-cards-scroller-itemview {
-        flex: 0 0 240px;
-        height: 340px;
-    }
-    
-    .rf-ccard-content-info {
+    .rf-ccard-content {
         padding: 20px;
     }
     
-    .rf-ccard-content-headerlink {
-        font-size: 1.3rem;
+    .rf-ccard-img-full-wrapper {
+        width: 100px;
+        height: 100px;
     }
     
-    .rf-scroller-controls {
-        bottom: 40px;
-        right: 40px;
+    .friends-title {
+        font-size: 2rem;
+    }
+    
+    @keyframes autoScroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
     }
 }
 
 @media (max-width: 480px) {
     .rf-cards-scroller-itemview {
-        flex: 0 0 200px;
-        height: 300px;
+        flex: 0 0 250px;
+        min-width: 250px;
     }
     
-    .rf-ccard-content-info {
-        padding: 15px;
+    .rf-ccard {
+        height: 380px;
     }
     
-    .rf-ccard-content-headerlink {
-        font-size: 1.1rem;
-    }
-    
-    .friend-social-icons a {
-        font-size: 1rem;
-    }
-    
-    .rf-scroller-controls {
-        bottom: 30px;
-        right: 30px;
-    }
-    
-    .rf-play-pause {
-        width: 36px;
-        height: 36px;
-    }
-
-     .friends-title {
-        font-size: clamp(25px, 4vw, 16px); /* Scales between 12px and 16px */
-        text-align: center; /* Centers the title on small screens */
-        margin: 10px auto; /* Centers the element */
-        max-width: 100%; /* Limits width to keep it readable */
-        padding: 50px;
-    }
-
-    .text {
-        font-size: inherit; /* Ensures the text inside scales properly */
+    .friends-title {
+        font-size: 1.8rem;
+        margin-bottom: 40px;
     }
 }
 
-/* Touch devices */
-@media (hover: none) {
-    .scroller-inner {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        padding-bottom: 20px;
-    }
-    
+/* Smooth scroll behavior */
+@media (prefers-reduced-motion: reduce) {
     .rf-cards-scroller-platter {
         animation: none;
     }
-    
-    .rf-cards-scroller-platter::-webkit-scrollbar {
-        height: 4px;
-    }
+}
 
-    .rf-cards-scroller-platter::-webkit-scrollbar-track {
-        background: rgba(255, 255, 255, 0.1);
-    }
+/* Additional effects */
+.rf-ccard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
 
-    .rf-cards-scroller-platter::-webkit-scrollbar-thumb {
-        background: rgba(255, 255, 255, 0.3);
-        border-radius: 2px;
-    }
+.rf-ccard:hover::before {
+    opacity: 1;
 }
