@@ -9,7 +9,7 @@
     <title>Dev’s Portfolio Website </title>
     <link rel="icon" type="image/png" href="images/logo_preview_rev_1.png">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="friends.css">
+    <!-- <link rel="stylesheet" href="friends.css"> -->
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto+Slab:wght@300;400;500&family=Source+Code+Pro:wght@300;400;500&family=Playfair+Display:wght@400;500;600&display=swap"
         rel="stylesheet">
@@ -21,8 +21,9 @@
 <body>
     <canvas id="canvas"></canvas>
 
-    <!-- ----------------------------- 1 screen --------------------------------------------------- -->
-    <!-- ------------------------------Header Bar ------------------------------------------------- -->
+<!-- ================================================================================================== 1 screen====================================================================================================================================== -->
+<!-- ==================================================================================================Header Bar====================================================================================================================================== -->
+
     <div id="header">
         <div class="container">
             <nav>
@@ -46,7 +47,8 @@
         </div>
     </div>
 
-    <!-- ---------------------------------------------------------Screen 1 ( Introduction section ) ------------------------------------------------>
+<!-- ==================================================================================================Screen 1 ( Introduction section )====================================================================================================================================== -->
+
     <section id="Introduction">
         <div class="container">
             <div class="hero">
@@ -62,8 +64,8 @@
             </div>
         </div>
     </section>
-    <!-- ----------------------------------------------------- Screen 2 ------------------------------------------------------ -->
-    <!-- ------------------------------------------------------About Me Section -------------------------------------------- -->
+<!-- ================================================================================================== Secreen 2 ====================================================================================================================================== -->
+<!-- ================================================================================================== About Me Section ====================================================================================================================================== -->
     <!-- 24 April 2025 (wednesday) -->
     <main id="main">
         <section id="about" data-bg="#d5d9e5">
@@ -73,13 +75,14 @@
                     <div class="about-col-1 about-image">
                         <img src="images/dev02.jpg" class="userpic">
                     </div>
+                    
                     <div class="row-column-2 about-text">
-                        <p>Hi, I'm <b>Dev Gupta</b>, a passionate Cybersecurity enthusiast and Computer Science student
-                            based in Bhopal, India. With a deep interest in ethical hacking, secure networks, and web
-                            penetration testing, I thrive on solving real-world tech challenges. Whether it's writing
-                            code, analyzing threats, or building interactive websites, I’m always exploring new ways to
-                            blend creativity with technology. I'm on a mission to make the digital world safer—<i> "one
-                                line of code at a time"</i>.</p>
+                        <p>Hi, I’m <b>Dev Gupta</b>, a Computer Science student based in Bhopal, India. I have a strong interest in building efficient, 
+                            user-focused solutions and enjoy working across different areas of technology, from software development to web applications.
+                            I’m driven by curiosity and a continuous desire to learn, always exploring new tools, frameworks, and ideas to improve my skills. Whether it’s
+                            writing clean code, solving complex problems, or creating interactive digital experiences, I aim to deliver work that is both practical and impactful.
+                             I'm on a mission to make the digital world safer—<i> "one
+                            line of code at a time"</i>.</p>
                         <div class="tab-title">
                             <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
                             <p class="tab-links" onclick="opentab('Experience')">Experience</p>
@@ -125,7 +128,7 @@
                 </div>
             </div>
         </section>
-        <!-- ---------------------------------------------------------SERVICES -------------------------------------------------------------------------------- -->
+<!-- ================================================================================================== SERVICE ====================================================================================================================================== -->
         <section id="services" data-bg="#002a5c">
             <div class="container">
                 <h1 class="sub-title">My Services</h1>
@@ -156,37 +159,35 @@
                 </div>
             </div>
         </section>
-        <!-- ----------------------------------------------------------------------  WORK ----------------------------------------------------------------------------- -->
+<!-- ================================================================================================== Work ====================================================================================================================================== -->
         <section id="portfolio" data-bg="#084c61 ">
             <div class="container">
                 <h1 class="sub-title">My Work</h1>
                 <div class="work-list">
                     <div class="work">
-                        <img src="images/python_backdoor.jpg">
+                        <img src="images/YouTube-AI-Automation-Agent.png">
                         <div class="layer">
-                            <h3>Python backdoor</h3>
-                            <p>I developed a basic Python backdoor that allows remote access to a target machine. It
-                                supports simple commands like file access and system control over a network</p>
-                            <a href="https://example.com/" target="_blank" rel="noopener noreferrer"><i
+                            <h3>YouTube AI Automation Agent (IN PYTHON)</h3>
+                            <p>Automate YouTube publishing with AI: schedule, optimize, and design in one go</p>
+                            <a href="https://github.com/devkantgupta01/YouTube-AI-Automation-Agent" target="_blank" rel="noopener noreferrer"><i
                                     class="fa-solid fa-arrow-up-right-from-square"></i></a>
                         </div>
                     </div>
                     <div class="work">
-                        <img src="images/tic-tac-tao_game.jpg">
+                        <img src="images/Password_Manager.png">
                         <div class="layer">
-                            <h3>Tic-Tac-Toe Game</h3>
-                            <p>Tic-Tac-Toe game using HTML, CSS, and JavaScript where two players compete on a 3x3 grid.
-                                It handles turns, checks winners, and shows the result dynamically.</p>
-                            <a href="https://github.com/devkantgupta01/game" target="_blank"
+                            <h3>Password Manager (IN C++)</h3>
+                            <p>Built a password manager using C++  with secure storage and authentication. Used XOR encryption to protect user credentials.</p>
+                            <a href="http://github.com/devkantgupta01/PasswordManager" target="_blank"
                                 rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                         </div>
                     </div>
                     <div class="work">
-                        <img src="images/scientific_calculator.jpg">
+                        <img src="images/Bank_Management.png">
                         <div class="layer">
-                            <h3>Basic Scientific Calculator in C++</h3>
-                            <p>I built a basic scientific calculator in C++ for simple and scientific calculations.</p>
-                            <a href="https://github.com/devkantgupta01/2nd-year-projects/blob/main/Project_Calculator.cpp"
+                            <h3>Bank Management (IN JAVA)</h3>
+                            <p>Java-based bank system with file handling for deposits, withdrawals, and balance tracking.</p>
+                            <a href="https://github.com/devkantgupta01/Banking-System-In-Java"
                                 target="_blank" rel="noopener noreferrer"><i
                                     class="fa-solid fa-arrow-up-right-from-square"></i></a>
                         </div>
@@ -197,370 +198,10 @@
             </div>
         </section>
 
-        <!-- ------------------------------------------------------------------------------------- Friend section --------------------------------------------- -->
-        <!-- 07-june-2025 (saturday) -->
-        <section id="friends" data-bg="#333446">
-            <div class="friends-container">
-                <h1 class="friends-title">
-                    <span class="text">My Friends </span>
-                </h1>
 
+ 
+<!-- ==================================================================================================contact====================================================================================================================================== -->
 
-
-                <div class="rf-cards-scroller-platter" role="list" aria-label="Friends gallery">
-
-                    <!-- Friend Card 1 -->
-                    <div class="rf-cards-scroller-itemview" role="listitem">
-                        <div class="rf-ccard rf-ccard-purple">
-                            <div class="rf-ccard-content">
-                                <div class="rf-ccard-img-full-wrapper">
-                                    <img src="Friends_images/Mohneesh.jpg" alt="Friend 1" class="rf-ccard-img-full">
-                                </div>
-                                <div class="rf-ccard-content-info">
-                                    <div class="rf-ccard-content-header">
-                                        <a href="#" class="rf-ccard-content-headerlink">Mohneesh Gupta</a>
-                                    </div>
-                                    <div class="rf-ccard-content-desc">
-                                        <span class="rf-ccard-content-desccontent">
-                                            Full Stack Developer
-                                        </span>
-                                        <span class="rf-ccard-content-descprice">
-                                            Coding buddy & project collaborator
-                                        </span>
-                                        <div class="friend-social-icons">
-                                            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                                            <a href="#"><i class="fa-brands fa-github"></i></a>
-                                            <!-- <a href="#"><i class="fa-brands fa-instagram"></i></a> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Friend Card 2 -->
-                    <div class="rf-cards-scroller-itemview" role="listitem">
-                        <div class="rf-ccard rf-ccard-blue">
-                            <div class="rf-ccard-content">
-                                <div class="rf-ccard-img-full-wrapper">
-                                    <img src="Friends_images/Gulshan.jpg" alt="Friend 2" class="rf-ccard-img-full">
-                                </div>
-                                <div class="rf-ccard-content-info">
-                                    <div class="rf-ccard-content-header">
-                                        <a href="" class="rf-ccard-content-headerlink">Gulshan Kumar</a>
-                                    </div>
-                                    <div class="rf-ccard-content-desc">
-                                        <span class="rf-ccard-content-desccontent">
-                                            Web Developer
-                                            <!-- Cybersecurity Analyst & Ethical Hacker -->
-                                        </span>
-                                        <span class="rf-ccard-content-descprice">
-                                            Study partner
-                                        </span>
-                                        <div class="friend-social-icons">
-                                            <!-- <a href="#"><i class="fa-brands fa-twitter"></i></a> -->
-                                            <a
-                                                href="https://www.linkedin.com/in/gulshan-kumar-01100b2a9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"  target="_blank" rel="noopener noreferrer"><i
-                                                    class="fa-brands fa-linkedin"></i></a>
-                                            <a href="#"><i class="fa-brands fa-github"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Friend Card 3 -->
-                    <div class="rf-cards-scroller-itemview" role="listitem">
-                        <div class="rf-ccard rf-ccard-green">
-                            <div class="rf-ccard-content">
-                                <div class="rf-ccard-img-full-wrapper">
-                                    <img src="Friends_images/Hardik.jpg" alt="Friend 3" class="rf-ccard-img-full">
-                                </div>
-                                <div class="rf-ccard-content-info">
-                                    <div class="rf-ccard-content-header">
-                                        <a href="#" class="rf-ccard-content-headerlink">Hardik Jain</a>
-                                    </div>
-                                    <div class="rf-ccard-content-desc">
-                                        <span class="rf-ccard-content-desccontent">
-                                            C++ & web Developer
-                                        </span>
-                                        <span class="rf-ccard-content-descprice">
-                                            YouTube collaboration partner
-
-                                        </span>
-                                        <div class="friend-social-icons">
-                                            <a
-                                                href="https://www.linkedin.com/in/hardik-jain-956b29297?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"  target="_blank" rel="noopener noreferrer"><i
-                                                    class="fa-brands fa-linkedin"></i></a>
-                                            <a href="#"><i class="fa-brands fa-github"></i></a>
-                                            <!-- <a href="#"><i class="fa-brands fa-kaggle"></i></a> -->
-                                            <!-- <a href="#"><i class="fa-brands fa-medium"></i></a> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Friend Card 4 -->
-                    <div class="rf-cards-scroller-itemview" role="listitem">
-                        <div class="rf-ccard rf-ccard-orange">
-                            <div class="rf-ccard-content">
-                                <div class="rf-ccard-img-full-wrapper">
-                                    <img src="Friends_images/Pritam.jpg" alt="Friend 4" class="rf-ccard-img-full">
-                                </div>
-                                <div class="rf-ccard-content-info">
-                                    <div class="rf-ccard-content-header">
-                                        <a href="#" class="rf-ccard-content-headerlink">Pritam Kumar</a>
-                                    </div>
-                                    <div class="rf-ccard-content-desc">
-                                        <span class="rf-ccard-content-desccontent">
-                                            Machine Learning Developer
-                                        </span>
-                                        <span class="rf-ccard-content-descprice">
-                                            Mama-Bhanja
-                                        </span>
-                                        <div class="friend-social-icons">
-                                            <a
-                                                href="https://www.linkedin.com/in/pritam-kumar-89a9982b6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"  target="_blank" rel="noopener noreferrer"><i
-                                                    class="fa-brands fa-linkedin"></i></a>
-                                            <a href="#"><i class="fa-brands fa-github"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Friend Card 5 -->
-                    <div class="rf-cards-scroller-itemview" role="listitem">
-                        <div class="rf-ccard rf-ccard-red">
-                            <div class="rf-ccard-content">
-                                <div class="rf-ccard-img-full-wrapper">
-                                    <img src="Friends_images/Dev.jpg" alt="Friend 5" class="rf-ccard-img-full">
-                                </div>
-                                <div class="rf-ccard-content-info">
-                                    <div class="rf-ccard-content-header">
-                                        <a href="#" class="rf-ccard-content-headerlink">Dev Ray</a>
-                                    </div>
-                                    <div class="rf-ccard-content-desc">
-                                        <span class="rf-ccard-content-desccontent">
-                                            Full stack developer
-                                        </span>
-                                        <span class="rf-ccard-content-descprice">
-                                            Best friend since college days
-                                        </span>
-                                        <div class="friend-social-icons">
-                                            <a
-                                                href="https://www.linkedin.com/in/dev-kumar-ray-02b956269?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"  target="_blank" rel="noopener noreferrer"><i
-                                                    class="fa-brands fa-linkedin"></i></a>
-                                            <a href="#"><i class="fa-brands fa-github"></i></a>
-                                            <!-- <a href="#"><i class="fa-brands fa-twitter"></i></a> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Friend Card 6 -->
-                    <div class="rf-cards-scroller-itemview" role="listitem">
-                        <div class="rf-ccard rf-ccard-teal">
-                            <div class="rf-ccard-content">
-                                <div class="rf-ccard-img-full-wrapper">
-                                    <img src="Friends_images/Bablu.jpg" alt="Friend 6" class="rf-ccard-img-full">
-                                </div>
-                                <div class="rf-ccard-content-info">
-                                    <div class="rf-ccard-content-header">
-                                        <a href="#" class="rf-ccard-content-headerlink">Bablu Kumar</a>
-                                    </div>
-                                    <div class="rf-ccard-content-desc">
-                                        <span class="rf-ccard-content-desccontent">
-                                            Full stack developer
-                                        </span>
-                                        <span class="rf-ccard-content-descprice">
-                                            Hackathon partner
-                                        </span>
-                                        <div class="friend-social-icons">
-                                            <a
-                                                href="https://www.linkedin.com/in/bablu-kumar-60141130a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"  target="_blank" rel="noopener noreferrer"><i
-                                                    class="fa-brands fa-linkedin"></i></a>
-                                            <a href="#"><i class="fa-brands fa-github"></i></a>
-                                            <!-- <a href="#"><i class="fa-brands fa-dribbble"></i></a> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!------------------------------------------------------------ Duplicate cards for seamless loop ------------------------------------------------------>
-                    <!-- Friend Card 1 (duplicate) -->
-                    <div class="rf-cards-scroller-itemview" role="listitem">
-                        <div class="rf-ccard rf-ccard-purple">
-                            <div class="rf-ccard-content">
-                                <div class="rf-ccard-img-full-wrapper">
-                                    <img src="Friends_images/Mohneesh.jpg" alt="Friend 1" class="rf-ccard-img-full">
-                                </div>
-                                <div class="rf-ccard-content-info">
-                                    <div class="rf-ccard-content-header">
-                                        <a href="#" class="rf-ccard-content-headerlink">Mohneesh Gupta</a>
-                                    </div>
-                                    <div class="rf-ccard-content-desc">
-                                        <span class="rf-ccard-content-desccontent">
-                                            Full Stack Developer
-                                        </span>
-                                        <span class="rf-ccard-content-descprice">
-                                            Coding buddy & project collaborator
-                                        </span>
-                                        <div class="friend-social-icons">
-                                            <a
-                                                href="https://www.linkedin.com/in/mohneesh-gupta?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"  target="_blank" rel="noopener noreferrer"><i
-                                                    class="fa-brands fa-linkedin"></i></a>
-                                            <a href="#"><i class="fa-brands fa-github"></i></a>
-                                            <!-- <a href="#"><i class="fa-brands fa-instagram"></i></a> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Friend Card 2 (duplicate) -->
-                    <div class="rf-cards-scroller-itemview" role="listitem">
-                        <div class="rf-ccard rf-ccard-blue">
-                            <div class="rf-ccard-content">
-                                <div class="rf-ccard-img-full-wrapper">
-                                    <img src="Friends_images/Gulshan.jpg" alt="Friend 2" class="rf-ccard-img-full">
-                                </div>
-                                <div class="rf-ccard-content-info">
-                                    <div class="rf-ccard-content-header">
-                                        <a href="#" class="rf-ccard-content-headerlink">Gulshan Kumar</a>
-                                    </div>
-                                    <div class="rf-ccard-content-desc">
-                                        <span class="rf-ccard-content-desccontent">
-                                            Web Developer
-                                            <!-- Cybersecurity Analyst & Ethical Hacker -->
-                                        </span>
-                                        <span class="rf-ccard-content-descprice">
-                                            Study partner
-                                        </span>
-                                        <div class="friend-social-icons">
-                                            <!-- <a href="#"><i class="fa-brands fa-twitter"></i></a> -->
-                                            <a
-                                                href="https://www.linkedin.com/in/gulshan-kumar-01100b2a9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"  target="_blank" rel="noopener noreferrer"><i
-                                                    class="fa-brands fa-linkedin"></i></a>
-                                            <a href="#"><i class="fa-brands fa-github"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Friend Card 3 (duplicate) -->
-                    <div class="rf-cards-scroller-itemview" role="listitem">
-                        <div class="rf-ccard rf-ccard-green">
-                            <div class="rf-ccard-content">
-                                <div class="rf-ccard-img-full-wrapper">
-                                    <img src="Friends_images/Hardik.jpg" alt="Friend 3" class="rf-ccard-img-full">
-                                </div>
-                                <div class="rf-ccard-content-info">
-                                    <div class="rf-ccard-content-header">
-                                        <a href="#" class="rf-ccard-content-headerlink">Hardik Jain</a>
-                                    </div>
-                                    <div class="rf-ccard-content-desc">
-                                        <span class="rf-ccard-content-desccontent">
-                                            C++ & web Developer
-                                        </span>
-                                        <span class="rf-ccard-content-descprice">
-                                            YouTube collaboration partner
-
-                                        </span>
-                                        <div class="friend-social-icons">
-                                            <a
-                                                href="https://www.linkedin.com/in/hardik-jain-956b29297?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"  target="_blank" rel="noopener noreferrer"><i
-                                                    class="fa-brands fa-linkedin"></i></a>
-                                            <a href="#"><i class="fa-brands fa-github"></i></a>
-                                            <!-- <a href="#"><i class="fa-brands fa-kaggle"></i></a> -->
-                                            <!-- <a href="#"><i class="fa-brands fa-medium"></i></a> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                    <!-- Friend Card 5 (duplicate) -->
-                    <div class="rf-cards-scroller-itemview" role="listitem">
-                        <div class="rf-ccard rf-ccard-red">
-                            <div class="rf-ccard-content">
-                                <div class="rf-ccard-img-full-wrapper">
-                                    <img src="Friends_images/Dev.jpg" alt="Friend 5" class="rf-ccard-img-full">
-                                </div>
-                                <div class="rf-ccard-content-info">
-                                    <div class="rf-ccard-content-header">
-                                        <a href="#" class="rf-ccard-content-headerlink">Dev Ray</a>
-                                    </div>
-                                    <div class="rf-ccard-content-desc">
-                                        <span class="rf-ccard-content-desccontent">
-                                            Full stack developer
-                                        </span>
-                                        <span class="rf-ccard-content-descprice">
-                                            Best friend since college days
-                                        </span>
-                                        <div class="friend-social-icons">
-                                            <a
-                                                href="https://www.linkedin.com/in/dev-kumar-ray-02b956269?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"  target="_blank" rel="noopener noreferrer"><i
-                                                    class="fa-brands fa-linkedin"></i></a>
-                                            <a href="#"><i class="fa-brands fa-github"></i></a>
-                                            <!-- <a href="#"><i class="fa-brands fa-twitter"></i></a> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Friend Card 6 (duplicate) -->
-                    <div class="rf-cards-scroller-itemview" role="listitem">
-                        <div class="rf-ccard rf-ccard-teal">
-                            <div class="rf-ccard-content">
-                                <div class="rf-ccard-img-full-wrapper">
-                                    <img src="Friends_images/Bablu.jpg" alt="Friend 6" class="rf-ccard-img-full">
-                                </div>
-                                <div class="rf-ccard-content-info">
-                                    <div class="rf-ccard-content-header">
-                                        <a href="#" class="rf-ccard-content-headerlink">Bablu Kumar</a>
-                                    </div>
-                                    <div class="rf-ccard-content-desc">
-                                        <span class="rf-ccard-content-desccontent">
-                                            Full stack developer
-                                        </span>
-                                        <span class="rf-ccard-content-descprice">
-                                            Hackathon partner
-                                        </span>
-                                        <div class="friend-social-icons">
-                                            <a
-                                                href="https://www.linkedin.com/in/bablu-kumar-60141130a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"  target="_blank" rel="noopener noreferrer"><i
-                                                    class="fa-brands fa-linkedin"></i></a>
-                                            <a href="#"><i class="fa-brands fa-github"></i></a>
-                                            <!-- <a href="#"><i class="fa-brands fa-dribbble"></i></a> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- ----------------------------------------------------------------------------------------    contact ------------------------------------------------------------------------------------------------- -->
         <div class="wave-divider">
             <svg viewBox="0 0 1440 320">
                 <path fill="#000000"
@@ -588,7 +229,7 @@
                             <a href="https://example.com/" target="_blank" rel="noopener noreferrer"><i
                                     class="fa-brands fa-square-facebook facebook-icon"></i></a>
                         </div>
-                        <a href="/images/Career Objective.pdf" download class="btn btn2">Download CV</a>
+                        <a href="/images/DevKantGupta_Resume.pdf" download class="btn btn2">Download CV</a>
                     </div>
                     <div class="contact-right">
                         <form name="submit-to-google-sheet"
@@ -620,7 +261,7 @@
 
 
 
-        <!-- --------------------------------------------------------------------------------------------------------------------------------- -->
+<!-- ======================================================================================================================================================================================================================================== -->
 
 
     </main>
